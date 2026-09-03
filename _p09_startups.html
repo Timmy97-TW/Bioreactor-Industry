@@ -5,7 +5,7 @@
   <p class="lede"><span class="en">Between 2020 and 2022 a wave of companies set out to replace the stirred tank. Four years later the survivors have one thing in common, and it is not the reactor.</span><span class="zh">2020 到 2022 年間，一批新創立志取代攪拌槽。四年後，活下來的公司有一個共同點，而那個共同點不是反應器。</span></p>
 
   <figure>
-    <span class="fignum">Figure 09</span>
+    <span class="fignum" data-fig></span>
     <div class="figtitle"><span class="en">What they were funded to build, and what they sell today</span><span class="zh">當初拿錢做的事，與今天實際賣的東西</span></div>
     <div class="figsub"><span class="en">Selected hardware entrants, 2021 to 2026. Green means the original hardware thesis is still the product.</span><span class="zh">2021 至 2026 年間主要硬體新創。綠色代表原本的硬體主張仍然是今天的產品。</span></div>
     <div id="fig-pivot"></div>
@@ -27,7 +27,7 @@
   </div>
 
   <figure>
-    <span class="fignum">Figure 10</span>
+    <span class="fignum" data-fig></span>
     <div class="figtitle"><span class="en">Architecture changes cost more than scale does</span><span class="zh">改架構比放大尺寸更能降低成本</span></div>
     <div class="figsub"><span class="en">Modelled cost of goods for cultivated meat, by production vessel. Negulescu et al., Biotechnology and Bioengineering, 2023.</span><span class="zh">細胞培養肉的模型化生產成本，依生產槽體區分。Negulescu 等，Biotechnology and Bioengineering，2023。</span></div>
     <div id="fig-tea"></div>
@@ -37,7 +37,7 @@
 
   <div class="tablewrap">
   <table>
-    <caption><span class="en">Table 3. Selected entrants, verified status as of September 2026. Performance figures are vendor claims unless a citation is given.</span><span class="zh">表 3。主要新進者，2026 年 9 月查證狀態。除另註明出處外，效能數字皆為廠商自述。</span></caption>
+    <caption><span class="en"><b data-tab></b> Selected entrants, verified status as of September 2026. Performance figures are vendor claims unless a citation is given.</span><span class="zh"><b data-tab></b> 主要新進者，2026 年 9 月查證狀態。除另註明出處外，效能數字皆為廠商自述。</span></caption>
     <thead><tr>
       <th><span class="en">Company</span><span class="zh">公司</span></th>
       <th><span class="en">Architecture</span><span class="zh">架構</span></th>
@@ -95,6 +95,15 @@
       <p><span class="en">Terumo BCT's Quantum Flex runs about 11,500 fibres at 2.1 m² with a lumen bore near 200 µm. A published run on that platform family reached 3.1 × 10<sup>7</sup> cells per mL and 2.5 × 10<sup>10</sup> cells in 29 days, fifteen times static culture. ReLeaf's module is 11 fibres, 1.0 mm bore, 0.02 m². Same architecture, two orders of magnitude apart in area. That is worth stating plainly rather than leaving a judge to work out.</span><span class="zh">Terumo BCT 的 Quantum Flex 使用約 11,500 根纖維、2.1 m²，內徑約 200 µm。同一平台家族的一份已發表運轉達到每毫升 3.1 × 10<sup>7</sup> 顆細胞、29 天內 2.5 × 10<sup>10</sup> 顆，是靜置培養的十五倍。ReLeaf 的模組是 11 根纖維、內徑 1.0 mm、0.02 m²。架構相同，面積差兩個數量級。這件事值得直接寫出來，而不是留給評審自己算。</span></p>
     </div>
   </div>
+  <figure>
+    <span class="fignum" data-fig></span>
+    <div class="figtitle"><span class="en">The same architecture, two orders of magnitude apart</span><span class="zh">同一個架構，相差兩個數量級</span></div>
+    <div class="figsub"><span class="en">Fibre bundle cross-sections drawn to the same scale, and membrane area compared.</span><span class="zh">纖維束剖面以相同比例繪製，並比較膜面積。</span></div>
+    <div id="fig-fibres"></div>
+    <figcaption><span class="en">ReLeaf's eleven fibres at a 1.0 mm bore are drawn at the same scale as a patch of Terumo's bundle, whose fibres are about 200 µm. Neither is wrong for its job: a wide bore keeps wall shear low and lets a student team measure pressure drop with ordinary sensors, while a narrow bore buys area. The honest statement is that 0.02 m² is 0.95 % of 2.1 m², and that everything ReLeaf claims about scale-out rests on adding modules rather than on this one being large.</span><span class="zh">ReLeaf 的十一根 1.0 mm 內徑纖維，與 Terumo 纖維束的一小塊以相同比例繪製，後者纖維約 200 µm。就各自的用途而言，兩者都沒有錯：大內徑讓壁面剪切維持在低點，也讓學生團隊能用一般感測器量到壓降；小內徑則換來面積。誠實的說法是：0.02 m² 是 2.1 m² 的 0.95%，而 ReLeaf 關於橫向擴充的所有主張，靠的是增加模組，不是靠這一個模組很大。</span>
+    <span class="src">ReLeaf geometry from Bioreactor_UI/data/rig_constants.csv. Terumo BCT Quantum Flex specifications via BioProcess International. FiberCell C2018 from the published 2025 price list. <b>Note the internal conflict:</b> the rig constants give 11 fibres and 0.02 m², while the invariant explorer models the module as 8 fibres and 150 cm². Both are self-consistent, so they describe two different modules. Reconcile before the wiki freeze.</span></figcaption>
+  </figure>
+
   <p class="body" style="margin-top:20px"><span class="en">One more entrant is worth watching because it inverts the problem. EdiMembre, spun out of MilliporeSigma in August 2025 on a $400 K pre-seed, spins its hollow fibres from soy, mung bean and lentil protein isolate, so the scaffold is eaten rather than removed. Cellular Agriculture Ltd is one of its investors.</span><span class="zh">還有一個新進者值得注意，因為它把問題反轉了。EdiMembre 於 2025 年 8 月自 MilliporeSigma 分拆，種子前輪 40 萬美元，其中空纖維由大豆、綠豆與扁豆蛋白分離物紡製而成，因此支架是被吃掉而不是被移除。Cellular Agriculture Ltd 是其投資人之一。</span></p>
 
   <div class="pull">

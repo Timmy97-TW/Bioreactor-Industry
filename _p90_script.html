@@ -27,6 +27,11 @@ const C=window.CHARTC;
 function put(id,html){const el=document.getElementById(id); if(el) el.innerHTML=html;}
 
 function draw(){
+document.querySelectorAll('.fignum[data-fig]').forEach((el,i)=>{
+  el.textContent = T('Figure ','圖 ')+String(i+1).padStart(2,'0');});
+document.querySelectorAll('caption b[data-tab]').forEach((el,i)=>{
+  el.textContent = T('Table '+(Math.floor(i/2)+1)+'.','表 '+(Math.floor(i/2)+1)+'。');});
+
 /* Fig 01 · market size estimate spread */
 put('fig-spread', hbar([
   {k:'Mordor Intelligence (2026)',            v:6.09, lab:'6.09'},
@@ -177,6 +182,42 @@ put('fig-matrix', matrix([
     xlo:T('central plant','集中式廠房'), xhi:T('beside the crop','作物旁邊'),
     quad:[{x0:50,x1:100,y0:50,y1:100,c:'#eef8dd',op:.85,at:'br',k:T('NEAR THE CROP, AND OPERATOR-DECIDED','靠近作物，且由操作者決定')},
           {x0:0,x1:50,y0:0,y1:50,c:'#eceee7',op:.7,k:T('CENTRAL AND GATED','集中，且受管制')}]}));
+
+/* Fig · vessels drawn to scale */
+put('fig-scale', vessels([
+ {k:T('Production scale','量產尺度'), k2:T('DRAWN TO SCALE · 1 M = 24 PX','等比例繪製 · 1 公尺 = 24 像素'),
+  px:24, rule:[2,4,6,8,10], x0:10,
+  ref:{h:1.7,k:T('1.7 m','1.7 公尺')},
+  items:[
+   {L:2000,   lab:'2,000 L',   k:T('single-use stirred','拋棄式攪拌'), gap:64},
+   {L:6000,   lab:'6,000 L',   k:T('ABEC CSR','ABEC CSR'), gap:54},
+   {L:25000,  lab:'25,000 L',  k:T('BioMADE, 2028','BioMADE，2028'), gap:46},
+   {L:36000,  lab:'36,000 L',  k:T('WuXi single-use line','WuXi 拋棄式產線'), gap:56},
+   {L:150000, lab:'150,000 L', k:T('Liberation fermenter','Liberation 發酵槽'), gap:42},
+   {L:200000, lab:'200,000 L', k:T('stainless, modelled','不鏽鋼，模型值'), c:C.neutral}]},
+ {k:T('Development scale','開發尺度'), k2:T('SAME METHOD, MAGNIFIED TEN TIMES','相同方法，放大十倍'),
+  px:240, rule:[0.25,0.5,0.75], x0:10, ruleFmt:m=>(m*100)+' cm',
+  items:[
+   {L:0.015, lab:'15 mL',  k:T('Ambr 15','Ambr 15'), gap:80},
+   {L:0.25,  lab:'250 mL', k:T('Stratyx 250','Stratyx 250'), gap:88},
+   {L:0.3,   lab:'300 mL', k:T('ReLeaf BR-01 medium','ReLeaf BR-01 培養基'), c:C.brandDeep, gap:104},
+   {L:5,     lab:'5 L',    k:T('BioFlo benchtop','BioFlo 桌上型'), gap:92},
+   {L:80,    lab:'80 L',   k:T('PBS-80 vertical wheel','PBS-80 垂直輪')}]}
+]));
+
+/* Fig · seven architectures */
+put('fig-arch', archgrid([
+ {a:'stirred', c:C.sky,   k:T('Stirred tank','攪拌槽'),        k2:T('the default\nbest scale-up rules','預設值\n放大規則最成熟')},
+ {a:'wave',    c:C.sky,   k:T('Rocking / wave','搖擺／波浪'),   k2:T('no stirrer, no sparger\nseed trains','無攪拌、無通氣管\n種菌串')},
+ {a:'wheel',   c:C.plum,  k:T('Vertical wheel','垂直輪'),       k2:T('low shear\nstem cells, microcarriers','低剪切\n幹細胞、微載體')},
+ {a:'airlift', c:C.warn,  k:T('Airlift','氣舉式'),              k2:T('no impeller\ncheapest per litre at scale','無葉輪\n大尺度每公升最便宜')},
+ {a:'hollow',  c:C.accent,k:T('Hollow fibre','中空纖維'),        k2:T('bubble-free, full retention\nthe ReLeaf architecture','無氣泡、完全截留\nReLeaf 的架構'), em:1},
+ {a:'biofilm', c:C.sand,  k:T('Biofilm / immobilised','生物膜／固定化'), k2:T('continuous, no reseeding\nCapra Biosciences','連續、免重新接種\nCapra Biosciences')},
+ {a:'gas',     c:C.bad,   k:T('Gas fermentation','氣體發酵'),    k2:T('feedstock is an off-gas\nLanzaTech','原料是廢氣\nLanzaTech')},
+], {cols:4, ch:196}));
+
+/* Fig · hollow-fibre cross-sections to scale */
+put('fig-fibres', fibres({}));
 }
 if(_boot==='zh'||_boot==='en') setLang(_boot); else draw();
 </script>

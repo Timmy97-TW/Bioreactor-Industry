@@ -2,7 +2,7 @@
 
 An industry report on the global bioreactor and biomanufacturing equipment market, written
 for **GEMS Taiwan, iGEM 2026, project ReLeaf**. Light mode, bilingual English and 繁體中文,
-fourteen original figures, single file, no dependencies and no network calls.
+seventeen original figures, single file, no dependencies and no network calls.
 
 **Live:** https://timmy97-tw.github.io/Bioreactor-Industry/
 
@@ -40,7 +40,12 @@ python3 _build.py
 - `_base.css` design system, kept consistent with the companion pages below
 - `_charts.js` SVG figure renderers, no dependencies
 - `_p*.html` sections, assembled in filename order
-- `_build.py` inlines the CSS and JS and writes `index.html`
+- `img/` company logos, public domain files from Wikimedia Commons, credited in `CREDITS.md`
+- `_build.py` inlines the CSS, the JS and every image as a data URI, then writes `index.html`
+
+`index.html` is therefore a single self-contained file with no external requests. Every
+figure is an original SVG drawn from data; there are no photographs, and where a photograph
+would have been the obvious illustration there is a measured or derived drawing instead.
 
 Every figure is drawn from a data literal inside `_p90_script.html`, so the numbers stay
 auditable in one place.
