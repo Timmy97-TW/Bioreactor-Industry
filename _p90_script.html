@@ -1,0 +1,182 @@
+<script>
+__CHARTS_JS__
+</script>
+<script>
+/* ── language ─────────────────────────────────────────────── */
+function setLang(l){
+  document.documentElement.setAttribute('data-lang',l);
+  document.documentElement.lang = (l==='zh')?'zh-Hant':'en';
+  document.getElementById('btn-en').setAttribute('aria-pressed', l==='en');
+  document.getElementById('btn-zh').setAttribute('aria-pressed', l==='zh');
+  try{localStorage.setItem('br-lang',l)}catch(e){}
+  draw();
+}
+var _boot=null; try{_boot=localStorage.getItem('br-lang');}catch(e){}
+const ZH=()=>document.documentElement.getAttribute('data-lang')==='zh';
+const T=(en,zh)=>ZH()?zh:en;
+
+/* ── nav highlighting ─────────────────────────────────────── */
+const links=[...document.querySelectorAll('nav.toc a')];
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){
+  links.forEach(a=>a.classList.toggle('on', a.getAttribute('href')==='#'+e.target.id));}})},
+  {rootMargin:'-45% 0px -50% 0px'});
+document.querySelectorAll('section[id]').forEach(s=>obs.observe(s));
+
+/* ── figures ──────────────────────────────────────────────── */
+const C=window.CHARTC;
+function put(id,html){const el=document.getElementById(id); if(el) el.innerHTML=html;}
+
+function draw(){
+/* Fig 01 · market size estimate spread */
+put('fig-spread', hbar([
+  {k:'Mordor Intelligence (2026)',            v:6.09, lab:'6.09'},
+  {k:'Credence Research (2025)',              v:8.85, lab:'8.85'},
+  {k:'Precision Business Insights (2025)',    v:13.0, lab:'13.0'},
+  {k:'Precedence Research (2025)',            v:13.27,lab:'13.27'},
+  {k:'Global Market Insights (2025)',         v:13.8, lab:'13.8'},
+  {k:'Research and Markets (2026)',           v:13.83,lab:'13.83'},
+  {k:T('Roots Analysis, bioreactors (2024)','Roots Analysis，生物反應器 (2024)'), v:16.7, lab:'16.7'},
+  {k:T('Roots Analysis, + fermenters (2024)','Roots Analysis，含發酵槽 (2024)'),  v:25.9, lab:'25.9', c:C.sky},
+  {k:T('InsightAce, + fermenters (2025)','InsightAce，含發酵槽 (2025)'),          v:26.1, lab:'26.1', c:C.sky},
+], {labW:250, valW:64, gridAt:[0,5,10,15,20,25], gridFmt:g=>'$'+g+'bn', axis:1, rowH:31}));
+
+/* Fig 02 · mammalian capacity vs demand */
+put('fig-capacity', lines(
+  ['2018','2020','2022','2023','2025','2027'],
+  [{k:T('Installed capacity','已裝機產能'), c:C.sky,   v:[4400,5200,null,6500,7500,8400], area:1},
+   {k:T('Demand','需求'),                   c:C.warn,  v:[2500,null,2500,null,4200,4400]}],
+  {h:300,R:130,max:9500,yfmt:v=>Math.round(v/1000)+'k',ylab:T('thousand litres','千公升')}));
+
+/* Fig 03 · fermentation facilities by largest vessel */
+put('fig-vessels', hbar([
+  {k:'100,000 L +',          v:9,  lab:'9',  c:C.bad,  em:1},
+  {k:'20,000 – 99,999 L',    v:20, lab:'20', c:C.warn, em:1},
+  {k:'2,000 – 19,999 L',     v:48, lab:'48', c:C.sand},
+  {k:'100 – 1,999 L',        v:91, lab:'91', c:C.accent},
+  {k:'10 – 99 L',            v:86, lab:'86', c:C.brandDeep},
+], {labW:170, valW:58, gridAt:[0,25,50,75,100], axis:1, rowH:34, bh:16}));
+
+/* Fig 04 · capital cost per litre */
+put('fig-costladder', hbar([
+  {k:T('2,000 L single-use system','2,000 L 拋棄式系統'),   v:125, lab:'$125 / L'},
+  {k:T('20,000 L vessel (Humbird)','20,000 L 槽體，Humbird'), v:75,  lab:'$75 / L'},
+  {k:T('20,000 L vessel (Risner)','20,000 L 槽體，Risner'),   v:50,  lab:'$50 / L'},
+  {k:T('200,000 L stainless vessel','200,000 L 不鏽鋼槽'),   v:8.5, lab:'$8.50 / L', c:C.accent, em:1},
+  {k:T('All-in installed, 1.2 M L plant','整廠攤提，120 萬公升'), v:106, lab:'$106 / L', c:C.sky},
+], {labW:250, valW:92, gridAt:[0,50,100], gridFmt:g=>'$'+g, axis:1, rowH:33}));
+
+/* Fig 09 · what they were funded to build vs what they sell */
+put('fig-pivot', stack([
+  {name:'Pow.bio',                 a:100, b:0},
+  {name:'Planetary Group',         a:100, b:0},
+  {name:'Cauldron Ferm',           a:100, b:0},
+  {name:'Capra Biosciences',       a:100, b:0},
+  {name:'Culture Biosciences',     a:60,  b:40},
+  {name:'The Cultivated B',        a:50,  b:50},
+  {name:'Liberation Bioindustries',a:100, b:0},
+  {name:'Ark Biotech',             a:0,   b:100, em:1},
+  {name:'Synonym → Roebling',      a:0,   b:100, em:1},
+], [{k:'a',k2:T('hardware / capacity is the product','硬體或產能就是產品'),c:C.accent},
+    {k:'b',k2:T('software is the product','軟體才是產品'),c:C.plum}],
+  {total:100, labW:190, cellfmt:()=>''}));
+
+/* Fig 10 · cultivated meat COGS by vessel */
+put('fig-tea', hbar([
+  {k:T('42,000 L stirred tank','42,000 L 攪拌槽'),   v:30.4, lab:'$30.4 / kg'},
+  {k:T('210,000 L stirred tank','210,000 L 攪拌槽'), v:20.8, lab:'$20.8 / kg'},
+  {k:T('260,000 L airlift','260,000 L 氣舉式'),      v:13.0, lab:'$13.0 / kg', c:C.accent, em:1},
+], {labW:220, valW:96, gridAt:[0,10,20,30], gridFmt:g=>'$'+g, axis:1, rowH:38, bh:18}));
+
+/* Fig 05 · Sartorius BPS, order intake vs sales, % cc */
+put('fig-cycle', lines(
+  ['2023','2024','2025','H1 2026'],
+  [{k:T('Order intake','訂單'), c:C.sky,  v:[-21.1,12.7,null,null], w:2.4},
+   {k:T('Sales','銷售'),        c:C.warn, v:[-17.6,0.9,9.5,8.3], w:2.4}],
+  {h:280,R:120,min:-26,max:20,base:0,ticks:4,yfmt:v=>(v>0?'+':'')+v.toFixed(0)+'%',
+   ylab:T('year on year, constant currency','年增率，固定匯率')}));
+
+/* Fig 06 · volumetric productivity */
+put('fig-prod', hbar([
+  {k:T('Fed-batch','饋料批次'),                        v:0.44, lab:'0.39 – 0.49', lo:0.39, hi:0.49, c:C.neutral},
+  {k:T('Rapid intensification, N-1 perfusion seed','快速強化，N-1 灌流種菌'), v:0.55, lab:'0.28 → 0.55', c:C.warn},
+  {k:T('High seeding density','高接種密度'),           v:2.04, lab:'2.04', c:C.sky},
+  {k:T('Perfusion','灌流'),                            v:2.29, lab:'2.29', c:C.accent, em:1},
+], {labW:280, valW:96, gridAt:[0,0.5,1,1.5,2,2.5], gridFmt:g=>g.toFixed(1), axis:1, rowH:36, bh:16, dp:2}));
+
+/* Fig 07 · three single-use shares */
+put('fig-su', hbar([
+  {k:T('Facilities using single-use somewhere','在某處使用拋棄式的廠房'), v:90, lab:'> 90 %', c:C.brandDeep},
+  {k:T('Installed bioreactor units','已裝機生物反應器台數'),             v:46, lab:'46 %', c:C.sky},
+  {k:T('Volumetric capacity','體積產能'),                                v:13, lab:'~13 %', c:C.warn, em:1},
+], {labW:280, valW:70, gridAt:[0,25,50,75,100], gridFmt:g=>g+'%', axis:1, rowH:38, bh:18}));
+
+/* Fig 08 · what the acquisition money bought */
+put('fig-ma', hbar([
+  {k:T('Filtration · Solventum P&F','過濾 · Solventum P&F'),        v:4100, lab:'$4,100 m', c:C.sky},
+  {k:T('Transfection reagents · Polyplus','轉染試劑 · Polyplus'),   v:2600, lab:'$2,600 m', c:C.sky},
+  {k:T('Biopreservation media · BioLife','生物保存介質 · BioLife'), v:1500, lab:'$1,500 m', c:C.sky},
+  {k:T('Single-use consumables · HPNE','拋棄式耗材 · HPNE'),        v:290,  lab:'$290 m',   c:C.brandDeep},
+  {k:T('Mixing · Metenova','混合 · Metenova'),                      v:173,  lab:'$173 m',   c:C.brandDeep},
+  {k:T('Bioreactors · Univercells Tech','生物反應器 · Univercells'), v:148, lab:'$148 m',   c:C.bad, em:1},
+  {k:T('Chromatography resins · Tantti','層析介質 · Tantti'),       v:75,   lab:'$75 m',    c:C.brandDeep},
+  {k:T('Process analytics · 908 Devices','製程分析 · 908 Devices'), v:70,   lab:'$70 m',    c:C.brandDeep},
+  {k:T('Bioreactors · Solaris Biotech','生物反應器 · Solaris'),      v:46,  lab:'$46 m',    c:C.bad, em:1},
+], {labW:300, valW:90, gridAt:[0,1000,2000,3000,4000], gridFmt:g=>'$'+(g/1000)+'bn', axis:1, rowH:30}));
+
+/* Fig 11 · policy timeline */
+put('fig-policy', timeline([
+  {lane:0, t:2022.72, k:T('EO 14081','14081 號行政命令'), k2:T('US biomanufacturing initiative','美國生物製造倡議'), dy:-18, anchor:'start', dx:-6, c:C.brand},
+  {lane:0, t:2025.20, k:T('EO 14081 rescinded','14081 遭撤銷'), k2:'14 Mar 2025', dy:-18, anchor:'end', dx:-4, c:C.bad},
+  {lane:0, t:2025.30, k:T('NSCEB report','NSCEB 報告'), k2:T('49 recommendations, $15 bn ask','49 項建議，要求 150 億美元'), dy:26, anchor:'start', dx:4, c:C.brand},
+  {lane:0, t:2025.96, k:T('BIOSECURE signed','BIOSECURE 簽署'), k2:'18 Dec 2025', dy:-44, anchor:'end', dx:-4, c:C.warn},
+  {lane:0, t:2026.44, k:T('WuXi AppTec listed 1260H','WuXi AppTec 列入 1260H'), k2:'8 Jun 2026', dy:-18, anchor:'end', dx:10, c:C.warn},
+  {lane:1, t:2025.96, k:T('EU Biotech Act proposal','歐盟生技法案提案'), k2:T('10-month permitting for strategic sites','策略性廠址十個月許可'), dy:-18, anchor:'end', dx:-6, c:C.sky},
+  {lane:2, t:2024.65, k:T('India BioE3','印度 BioE3'), k2:T('Rs 9,197 crore','919.7 億盧比'), dy:-18, anchor:'middle', c:C.plum},
+  {lane:2, t:2026.20, k:T('China 15th Five-Year Plan','中國十五五規劃'), k2:T('bioreactors named a focus','生物反應器列為重點'), dy:26, anchor:'end', dx:12, c:C.plum},
+], {y0:2022.4, y1:2026.9, laneH:92,
+    lanes:[{k:T('United States','美國')},{k:T('European Union','歐盟')},{k:T('Asia','亞洲')}]}));
+
+/* Fig 12 · open hardware costs */
+put('fig-open', hbar([
+  {k:T('DIY bubble column, 1 to 5 L','自製氣泡塔，1 至 5 L'),        v:440,  lab:'~$440',   c:C.brandDeep},
+  {k:'Chi.Bio ' + T('as published, 2020','論文公布值，2020'),         v:300,  lab:'~$300',   c:C.brandDeep},
+  {k:'Pioreactor 20 mL',                                              v:329,  lab:'$329',    c:C.brandDeep},
+  {k:'BioSamplr',                                                     v:700,  lab:'~$700',   c:C.accent},
+  {k:T('Open Bioeconomy Lab reactor','Open Bioeconomy Lab 反應器'),   v:650,  lab:'< £500',  c:C.accent},
+  {k:'Chi.Bio ' + T('as sold today','今日售價'),                      v:990,  lab:'$990',    c:C.warn, em:1},
+  {k:'Alg-Flex ' + T('photobioreactor','光生物反應器'),               v:1834, lab:'< $1,834',c:C.warn},
+  {k:'eVOLVER, 16 ' + T('chambers','個腔室'),                         v:2000, lab:'< $2,000',c:C.sky},
+  {k:'BIO-SPEC, 6 ' + T('parallel reactors','個平行反應器'),          v:2950, lab:'~$2,950', c:C.sky},
+], {labW:280, valW:86, gridAt:[0,1000,2000,3000], gridFmt:g=>'$'+g.toLocaleString(), axis:1, rowH:29}));
+
+/* Fig 13 · viability lost on drying */
+put('fig-dry', hbar([
+  {k:T('Freeze-drying, Pseudomonas','冷凍乾燥，Pseudomonas'),        v:1.5, lo:1, hi:2, lab:'1 – 2 log', c:C.sand},
+  {k:T('Spray-drying at 90 °C, Pantoea','90 °C 噴霧乾燥，Pantoea'),  v:3.5, lo:2, hi:5, lab:'2 – 5 log', c:C.warn},
+  {k:T('Fast fluidised bed','快速流化床'),                            v:4,   lab:'10⁹ → 10⁵', c:C.warn},
+  {k:T('Air-drying, endophytic Paraburkholderia','空氣乾燥，內生 Paraburkholderia'), v:6, lab:'6 log', c:C.bad, em:1},
+], {labW:300, valW:90, gridAt:[0,2,4,6], gridFmt:g=>g+' log', axis:1, rowH:36, bh:16}));
+
+/* Fig 14 · positioning matrix */
+put('fig-matrix', matrix([
+  {x:4,  y:8,  k:'WuXi Biologics', k2:T('contract capacity','委託產能'), c:C.sky, ly:24, anchor:'start', lx:-12},
+  {x:11, y:22, k:T('Liberation Bioindustries','Liberation Bioindustries'), c:C.sky, ly:-13, anchor:'start', lx:-16},
+  {x:24, y:9,  k:'Cellares', k2:T('closed automation','封閉自動化'), c:C.bad, ly:24},
+  {x:15, y:35, k:T('Sartorius · Cytiva · Thermo','Sartorius・Cytiva・Thermo'), k2:T('production single-use','量產拋棄式'), c:C.sky, ly:-24, anchor:'start', lx:-18},
+  {x:29, y:24, k:'Cauldron Ferm', c:C.sky, ly:5, anchor:'start', lx:11},
+  {x:31, y:45, k:'Pow.bio', c:C.sky, ly:-13, lx:-4},
+  {x:44, y:57, k:'Capra Biosciences', c:C.sky, ly:5, anchor:'start', lx:12},
+  {x:29, y:77, k:T('Eppendorf · benchtop lab','Eppendorf・實驗室桌上型'), c:C.plum, ly:-13},
+  {x:43, y:67, k:'Culture Biosciences', k2:'Stratyx 250', c:C.plum, ly:26},
+  {x:58, y:92, k:T('Open hardware','開源硬體'), k2:'Pioreactor · Chi.Bio · eVOLVER', c:C.warn, ly:26},
+  {x:65, y:19, k:'SoluBio', k2:T('on-farm, wild type','農場端，野生型'), c:C.sand, ly:24},
+  {x:91, y:86, k:'ReLeaf BR-01', c:C.brandDeep, r:9, em:1, halo:1, ly:-20, anchor:'end', lx:8},
+], {h:530,
+    xlab:T('Distance from the place the product is used','離產物使用地點的距離'),
+    ylab:T('Who must agree before it makes something different','要改做別的東西，必須誰點頭'),
+    xlo:T('central plant','集中式廠房'), xhi:T('beside the crop','作物旁邊'),
+    quad:[{x0:50,x1:100,y0:50,y1:100,c:'#eef8dd',op:.85,at:'br',k:T('NEAR THE CROP, AND OPERATOR-DECIDED','靠近作物，且由操作者決定')},
+          {x0:0,x1:50,y0:0,y1:50,c:'#eceee7',op:.7,k:T('CENTRAL AND GATED','集中，且受管制')}]}));
+}
+if(_boot==='zh'||_boot==='en') setLang(_boot); else draw();
+</script>

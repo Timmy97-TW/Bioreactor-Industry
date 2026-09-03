@@ -1,0 +1,103 @@
+<section id="releaf">
+<div class="wrap">
+  <div class="sechint">08 · Positioning</div>
+  <h2><span class="en">Where ReLeaf sits, and what it may honestly claim</span><span class="zh">ReLeaf 站在哪裡，以及可以誠實主張什麼</span></h2>
+  <p class="lede"><span class="en">An earlier internal note placed ReLeaf against three tiers of competitor and argued the case on cost. Checked against the project's own record, most of that argument cannot be used. What is left is stronger.</span><span class="zh">先前的內部筆記把 ReLeaf 對上三個梯隊的競爭者，並以成本作為論證主軸。對照專案自身的紀錄檢查後，那個論證的大部分都不能用。剩下的那部分，反而更強。</span></p>
+
+  <figure>
+    <span class="fignum">Figure 14</span>
+    <div class="figtitle"><span class="en">Two axes that do not require a bill of materials</span><span class="zh">兩條不需要物料清單就能畫的軸</span></div>
+    <div class="figsub"><span class="en">Horizontal: how far the reactor sits from the place its product is used. Vertical: who has to agree before the machine makes something different.</span><span class="zh">橫軸：反應器離產物使用地點有多遠。縱軸：要讓這台機器改做別的東西，必須誰點頭。</span></div>
+    <div id="fig-matrix"></div>
+    <figcaption><span class="en">The earlier note used cost against operator skill. ReLeaf cannot plot itself on a cost axis, because it has no bill of materials, and its own brief forbids the words cheap, low-cost and affordable until it does. These two axes need no price. They are both architectural, and both are things the design already decides. The top right quadrant is close to empty, and the only other occupants are open-source laboratory hardware.</span><span class="zh">先前的筆記用的是「成本 × 操作門檻」。ReLeaf 無法把自己畫在成本軸上，因為沒有物料清單總價；而專案自己的 brief 也明文禁止在有總價之前使用「便宜、低成本、負擔得起」這些字。這兩條軸不需要價格，兩者都是架構層次的，而且都是設計已經決定好的事。右上象限幾乎是空的，唯一的其他住戶是開源實驗室硬體。</span></figcaption>
+  </figure>
+
+  <h3 style="margin-top:44px"><span class="en">Verification of the earlier note</span><span class="zh">先前筆記的查核</span></h3>
+  <div class="tablewrap">
+  <table>
+    <caption><span class="en">Table 5. Checked against WikiHomepage/PROJECT_BRIEF.md, the invariant explorer, the instrument datasets and the Bioreactor_UI record.</span><span class="zh">表 5。對照 WikiHomepage/PROJECT_BRIEF.md、不變量探索器、儀器資料集與 Bioreactor_UI 紀錄查核。</span></caption>
+    <thead><tr>
+      <th style="width:30%"><span class="en">Claim in the earlier note</span><span class="zh">先前筆記的主張</span></th>
+      <th style="width:14%"><span class="en">Verdict</span><span class="zh">判定</span></th>
+      <th><span class="en">Why</span><span class="zh">理由</span></th>
+    </tr></thead>
+    <tbody>
+      <tr><td><span class="en">Three tiers: equipment giants, hardware disruptors, cloud and AI platforms</span><span class="zh">三個梯隊：設備巨頭、硬體破壞者、雲端與 AI 平台</span></td>
+        <td><span class="tag t2">holds</span></td>
+        <td><span class="en">Real segmentation, but incomplete. It misses the component and intensification suppliers, who sell the physics rather than the vessel, and the capacity operators, who sell litres. Those two layers are where the growth is.</span><span class="zh">是真實的分層，但不完整。漏了「零組件與製程強化供應商」（賣的是物理而非槽體）以及「產能營運商」（賣的是公升數）。成長正好落在這兩層。</span></td></tr>
+      <tr><td><span class="en">Cost reduction of 95 % or more against pharma-grade equipment</span><span class="zh">相對藥廠級設備，成本降低 95% 以上</span></td>
+        <td><span class="tag bad">cannot use</span></td>
+        <td><span class="en">PROJECT_BRIEF.md: cost is a design target, not a result, and no page or pitch may use cheap, low-cost, affordable, or any per-unit price until a bill of materials exists. There is no BOM in the repository, and the business-plan cost thread holds one message and no numbers.</span><span class="zh">PROJECT_BRIEF.md 寫明：成本是設計目標而非成果，在物料清單存在之前，任何頁面或簡報都不得使用便宜、低成本、負擔得起或任何單位價格。倉庫裡沒有 BOM，商業計畫的成本討論串只有一則訊息、沒有數字。</span></td></tr>
+      <tr><td><span class="en">Farmers operate it with one touch, adding water and a carbon source</span><span class="zh">農民一鍵操作，只要加水與碳源</span></td>
+        <td><span class="tag bad">cannot use</span></td>
+        <td><span class="en">Stated as achieved. The project's own not-yet-true list includes no measured biological output, delivery stopping at a reservoir, an unchosen membrane cutoff and an unconfirmed contained-use classification.</span><span class="zh">這是寫成「已達成」。但專案自己的「尚未成立」清單包含：沒有量測到任何生物產出、輸送止於儲槽、膜孔徑尚未選定、封閉使用分類未獲確認。</span></td></tr>
+      <tr><td><span class="en">Agricultural waste such as rice straw as the carbon source</span><span class="zh">以稻稈等農業廢棄物作為碳源</span></td>
+        <td><span class="tag bad">not on record</span></td>
+        <td><span class="en">Nothing in the project uses straw. The chassis is <i>B. subtilis</i> 168 in defined medium. Asserting a feedstock the team has never run is the fastest way to lose a judging session.</span><span class="zh">專案中沒有任何地方使用稻稈。底盤是 <i>B. subtilis</i> 168，跑在定義培養基上。主張一個團隊從未跑過的原料，是最快輸掉評審場次的方法。</span></td></tr>
+      <tr><td><span class="en">A thousand 10 L reactors equal one 10,000 L tank</span><span class="zh">一千台 10 L 反應器等於一台 10,000 L 大槽</span></td>
+        <td><span class="tag warn">needs rewriting</span></td>
+        <td><span class="en">Not as stated. The project's own invariant model scales by holding wall shear and flux constant while power per volume does not scale, and that tension is left in deliberately. Say the network claim as resilience and proximity, not as equal output.</span><span class="zh">照原句不成立。專案自己的不變量模型是靠固定壁面剪切與通量來放大，而單位體積功率並不隨之縮放，這個張力是刻意保留的。把網絡的主張講成韌性與距離，不要講成等量產出。</span></td></tr>
+      <tr><td><span class="en">The Nespresso machine for sustainable agriculture</span><span class="zh">永續農業的雀巢膠囊機</span></td>
+        <td><span class="tag bad">reverses the thesis</span></td>
+        <td><span class="en">A capsule machine is a closed system whose owner decides what may be brewed. The project's one sentence is about permission. This metaphor argues for the opposite of the project.</span><span class="zh">膠囊機是一個封閉系統，由擁有者決定能沖什麼。專案的核心句講的是「許可」。這個比喻論證的正好是專案的反面。</span></td></tr>
+      <tr><td><span class="en">Cellular Agriculture Ltd and Capra as architectural comparators</span><span class="zh">以 Cellular Agriculture Ltd 與 Capra 作為架構對標</span></td>
+        <td><span class="tag t2">holds, and is well chosen</span></td>
+        <td><span class="en">Hollow fibre and biofilm are the two architectures that genuinely break the stirred-tank assumption. Capra's funding mix is the more useful lesson: about $5.75 M of equity against a $7.5 M HHS agreement and a DARPA programme. Unusual architectures get bought by governments before they get bought by markets.</span><span class="zh">中空纖維與生物膜，是真正打破攪拌槽前提的兩種架構。Capra 的資金結構是更有用的一課：約 575 萬美元股權，對上 750 萬美元的 HHS 協議與一項 DARPA 計畫。特殊架構往往先被政府買單，才被市場買單。</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="pull">
+    <p><span class="en">The axis that is available is not cost. It is permission, and it is dose. A dried spore sachet is ambient stable, needs no power and is a real competitor to this entire device. What a sachet cannot do is be turned up on Tuesday afternoon because Thursday looks hot. A sachet answers whether. A reactor answers how much.</span><span class="zh">可用的軸不是成本，是「許可」與「劑量」。乾燥孢子包常溫穩定、不需電力，而且是這整台裝置的真實競爭者。孢子包做不到的是：因為星期四看起來會很熱，所以星期二下午把量調上去。孢子包只能回答「有沒有」，反應器回答的是「多少」。</span></p>
+    <span class="who">ReLeaf project brief, the refusal that the shelf-life argument requires</span>
+  </div>
+
+  <h3 style="margin-top:44px"><span class="en">Seven claims of trend alignment, each with the industry number beside it</span><span class="zh">七個「走在趨勢上」的主張，每個都附上產業數字</span></h3>
+  <p class="body"><span class="en">These are the claims ReLeaf can make without a bill of materials, without a titre and without a field trial. Each one is a statement about architecture, and each one has an industry figure that makes it more than an assertion.</span><span class="zh">以下是 ReLeaf 在沒有物料清單、沒有效價、沒有田間試驗的情況下仍可主張的說法。每一條都是關於架構的陳述，而且每一條都有一個產業數字讓它不只是自說自話。</span></p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr>
+      <th style="width:26%"><span class="en">What ReLeaf built</span><span class="zh">ReLeaf 做了什麼</span></th>
+      <th style="width:32%"><span class="en">The industry number that makes it a trend</span><span class="zh">讓它成為趨勢的產業數字</span></th>
+      <th><span class="en">How to say it</span><span class="zh">怎麼講</span></th>
+    </tr></thead>
+    <tbody>
+      <tr><td><span class="en">Perfusion with full cell retention rather than batch harvest</span><span class="zh">全細胞截留的灌流，而非批次收穫</span></td>
+        <td><span class="en">42.3 % of facilities were evaluating upstream continuous or perfusion in 2026; only 11.4 % were not considering it, down from 34 % in 2016.</span><span class="zh">2026 年有 42.3% 的廠房正在評估上游連續式或灌流製程；完全不考慮的只剩 11.4%，2016 年是 34%。</span></td>
+        <td><span class="en">We did not choose an unusual mode. We chose the mode the industry is moving to, at a size where it is easy to study.</span><span class="zh">我們選的不是冷門模式，而是產業正在轉向的模式，只是在一個容易研究的尺寸上。</span></td></tr>
+      <tr><td><span class="en">A single-use membrane module instead of a vessel that is cleaned</span><span class="zh">拋棄式膜模組，而非需要清洗的槽體</span></td>
+        <td><span class="en">Use of single-use perfusion equipment doubled from 33.1 % to 65.8 % of facilities over the past decade.</span><span class="zh">過去十年，使用拋棄式灌流設備的廠房比例從 33.1% 倍增到 65.8%。</span></td>
+        <td><span class="en">The disposable flow path is not a shortcut around cleaning validation. It is the direction the validated industry took first.</span><span class="zh">拋棄式流路不是繞過清洗驗證的捷徑，而是已驗證的產業自己先走的方向。</span></td></tr>
+      <tr><td><span class="en">Scale out by module count with wall shear and flux held constant</span><span class="zh">以模組數量放大，同時固定壁面剪切與通量</span></td>
+        <td><span class="en">This is van Reis linear scale ultrafiltration, 1997, the published method. One of seventeen iGEM bioreactor projects publishes a scale-up transform.</span><span class="zh">這就是 van Reis 1997 年的線性放大超濾法，是已發表的方法。十七個 iGEM 生物反應器專案中，只有一個公開了放大轉換式。</span></td>
+        <td><span class="en">Our scale-up rule is somebody else's published method, and we say which similarity group we sacrifice. Power per volume does not scale, and we leave that in.</span><span class="zh">我們的放大規則是別人已發表的方法，而且我們說明放棄了哪一組相似性。單位體積功率不隨之縮放，這點我們保留在圖上。</span></td></tr>
+      <tr><td><span class="en">An in-line optical measurement instead of offline sampling</span><span class="zh">線上光學量測，而非離線取樣</span></td>
+        <td><span class="en">Adoption of bioreactor automation and control rose from about 10 % in 2011 to 38.6 % in 2026.</span><span class="zh">生物反應器自動化與控制的採用率，從 2011 年約 10% 上升到 2026 年的 38.6%。</span></td>
+        <td><span class="en">Over 434 hours our photometer's reference channel fell from 25.8 to 9.3 lux, and the scatter in the reading rose at exactly those hours. The instrument recorded when to distrust itself. That is the measurement claim, not the growth curve.</span><span class="zh">在 434 小時的紀錄中，光度計自身的參考通道從 25.8 lux 掉到 9.3 lux，而讀值的散布正好在那幾個小時放大。儀器記錄下了「什麼時候不該相信自己」。這才是量測主張，不是那條生長曲線。</span></td></tr>
+      <tr><td><span class="en">Light as the actuator, with brightness intended as dose</span><span class="zh">以光作為致動器，亮度即劑量（設計意圖）</span></td>
+        <td><span class="en">Model predictive control and soft sensing are where process analytical technology is heading. An optical setpoint is the cheapest possible manipulated variable.</span><span class="zh">模型預測控制與軟感測是製程分析技術的方向。光學設定點是最廉價的可操作變數。</span></td>
+        <td><span class="en">Design intent, not a measured result. No induction curve exists in our hands, and the 105 minute latency is borrowed from a different organism at a different wavelength.</span><span class="zh">這是設計意圖，不是量測結果。我們手上沒有誘導曲線，105 分鐘的延遲是借自不同生物、不同波長的文獻值。</span></td></tr>
+      <tr><td><span class="en">An operator interface a non-expert can read</span><span class="zh">非專家也讀得懂的操作介面</span></td>
+        <td><span class="en">Built on ISA-101 High Performance HMI, the standard behind Emerson DeltaV Live, which Thermo Fisher's TruBio runs on, and behind Biostat and BioFlo.</span><span class="zh">建立在 ISA-101 高效能人機介面標準之上，也就是 Emerson DeltaV Live（Thermo Fisher TruBio 執行其上）、Biostat 與 BioFlo 背後的同一套標準。</span></td>
+        <td><span class="en">We did not invent a friendly interface. We applied the same standard the pharmaceutical control rooms use, to an operator who is not a pharmacist.</span><span class="zh">我們沒有發明一個「親切的介面」，而是把藥廠控制室在用的同一套標準，套用在一個不是藥師的操作者身上。</span></td></tr>
+      <tr><td><span class="en">The expression cassette is a slot, not a rebuild</span><span class="zh">表現卡匣是一個插槽，不是重造</span></td>
+        <td><span class="en">Architecture, not scale, is where the cost is. Moving from a 210,000 L stirred tank to a 260,000 L airlift cut modelled cost of goods further than a fivefold increase in scale did.</span><span class="zh">成本落在架構，不在尺寸。從 210,000 L 攪拌槽換成 260,000 L 氣舉式槽，模型成本的下降幅度大於把尺寸放大五倍。</span></td>
+        <td><span class="en">The platform outlives the molecule. That is a platform claim, and platform claims are the ones this industry pays for.</span><span class="zh">平台比分子活得久。這是平台主張，而這個產業付錢買的正是平台主張。</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="grid2" style="margin-top:34px">
+    <div class="card on-warn">
+      <h3><span class="en">What still has to be said out loud</span><span class="zh">還是得說出口的事</span></h3>
+      <p><span class="en">Taiwan has never permitted domestic cultivation of genetically engineered crops, and engineered microbial preparations for plant protection sit under a separate trial regulation. A device that puts an engineered organism next to a field has to name that, in the same breath as the vision. Saying it first is stronger than being asked.</span><span class="zh">台灣從未允許基因改造作物的境內種植，而供植物保護用的遺傳工程微生物製劑另有開發試驗研究管理辦法。一台把工程菌放到田邊的裝置，必須在講願景的同一口氣裡把這件事講出來。自己先說，比被問到再說有力。</span></p>
+      <p><span class="en">Containment is cellular, not molecular. A 0.2 µm pore retains whole cells and passes 20 to 200 nm outer-membrane vesicles. And the membrane cutoff is still unchosen: 0.2 µm and 50 kDa are two different devices with opposite consequences, and only one of them makes "passes only protein" true.</span><span class="zh">圍阻是細胞層級，不是分子層級。0.2 µm 孔徑攔得住完整細胞，卻讓 20 至 200 nm 的外膜囊泡通過。而且膜的截留值仍未選定：0.2 µm 與 50 kDa 是兩台後果相反的裝置，只有其中一台能讓「只讓蛋白質通過」成立。</span></p>
+    </div>
+    <div class="card on-brand">
+      <h3><span class="en">The two experiments that change the tier</span><span class="zh">能改變層級的兩個實驗</span></h3>
+      <p><span class="en">Against the five-tier hardware ladder, ReLeaf is characterised but not measured. Every invariant quoted, the wall shear rate, the flux ratio against critical flux, the k<sub>L</sub>a, is a model output at the default sliders, not a measurement. Tier one needs performance that was measured rather than computed.</span><span class="zh">對照五層硬體階梯，ReLeaf 屬於「已特徵化、未量測」。所有引用的不變量，包括壁面剪切率、通量對臨界通量之比、k<sub>L</sub>a，都是預設滑桿下的模型輸出，不是量測值。第一層要的是量測而非計算出來的性能。</span></p>
+      <p><span class="en">A flux against transmembrane pressure sweep replaces the assumed critical flux. A gassing-out test replaces the assumed k<sub>L</sub>a. Two experiments, both cheap, both doable before the wiki freeze on 21 October 2026.</span><span class="zh">一次通量對跨膜壓的掃描，取代假設的臨界通量。一次 gassing-out 試驗，取代假設的 k<sub>L</sub>a。兩個實驗，都便宜，都能在 2026 年 10 月 21 日 wiki 凍結前做完。</span></p>
+    </div>
+  </div>
+</div>
+</section>

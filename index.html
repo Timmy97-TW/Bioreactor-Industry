@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Bioreactor Industry, 2026</title>
+<meta name="description" content="An industry report on the global bioreactor and biomanufacturing equipment market: the players, the cycle, the technology shifts, and where a farm-side reactor sits in it.">
+<meta name="author" content="GEMS Taiwan · iGEM 2026 · ReLeaf">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏭</text></svg>">
+<style>
+/* ReLeaf · Bioreactor Industry Report · design system
+   Light mode only. Derived from tokens.css (iGEM studied-DNA) and kept
+   deliberately consistent with 25_Bioreactor_Landscape/index.html. */
+:root{
+  --paper:#fafaf8; --paper2:#f4f5f1; --paper3:#eceee7; --white:#fff;
+  --rule:#e2e5dd; --rule2:#c3c8bb;
+  --neutral:#7d837a; --muted:#5c6259; --ink:#22261f;
+  --brand:#66c902; --brand-deep:#4eaf02; --brand-wash:#eef8dd;
+  --accent:#2f6b26; --accent2:#e7f2e2;
+  --dark:#152b2b; --dark2:#1d3a39; --on-dark:#f1f4ee; --on-dark-m:#b4beb0; --dark-rule:#2b3f3e;
+  --sky:#2f6f9e; --sky-wash:#e6f0f7; --sky-deep:#1d4f75;
+  --warn:#9a5b12; --warn-wash:#fbf0df;
+  --bad:#96302a; --bad-wash:#fbe9e7;
+  --plum:#6b3f7a; --plum-wash:#f2ebf5;
+  --sand:#8a7434; --sand-wash:#f7f2e0;
+  --font-body:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  --font-mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --measure:72ch; --radius:8px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{line-height:1.2;margin:0;font-weight:650;letter-spacing:-.014em}
+p{margin:0 0 1em}
+a{color:var(--accent);text-underline-offset:2px}
+img,svg{max-width:100%}
+code,.mono{font-family:var(--font-mono);font-size:.88em}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+.narrow{max-width:860px;margin:0 auto;padding:0 24px}
+
+/* ── bilingual ───────────────────────────────────────────── */
+[data-lang="en"] .zh,[data-lang="zh"] .en{display:none}
+html[data-lang="zh"] body{line-height:1.8}
+html[data-lang="zh"] .lede,html[data-lang="zh"] p{letter-spacing:.01em}
+
+/* ── header ──────────────────────────────────────────────── */
+header.top{background:var(--dark);color:var(--on-dark);padding:52px 0 44px;position:relative;overflow:hidden}
+header.top:after{content:"";position:absolute;inset:0;background:
+  radial-gradient(900px 340px at 88% -10%,rgba(102,201,2,.16),transparent 62%),
+  radial-gradient(600px 300px at 12% 120%,rgba(47,111,158,.16),transparent 60%);pointer-events:none}
+header.top .wrap{position:relative;z-index:1}
+header.top h1{font-size:clamp(1.9rem,1.15rem+2.7vw,3.15rem);color:var(--on-dark);max-width:19ch}
+header.top .kicker{font-family:var(--font-mono);font-size:.73rem;letter-spacing:.15em;text-transform:uppercase;color:var(--brand);margin-bottom:15px}
+header.top .sub{color:var(--on-dark-m);max-width:70ch;margin-top:16px;font-size:1.04rem}
+.langbar{position:absolute;top:18px;right:24px;z-index:2;display:flex;border:1px solid var(--dark-rule);border-radius:999px;overflow:hidden;background:rgba(0,0,0,.18)}
+.langbar button{background:transparent;border:0;color:var(--on-dark-m);font:inherit;font-size:.8rem;padding:6px 15px;cursor:pointer}
+.langbar button[aria-pressed="true"]{background:var(--brand);color:#12250a;font-weight:600}
+.statline{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:18px 30px;margin-top:30px;padding-top:22px;border-top:1px solid var(--dark-rule)}
+.statline div{font-size:.83rem;color:var(--on-dark-m);line-height:1.45}
+.statline b{display:block;font-size:1.6rem;color:var(--on-dark);font-weight:650;letter-spacing:-.025em;margin-bottom:2px}
+.statline b small{font-size:.62em;font-weight:500;color:var(--on-dark-m);letter-spacing:0}
+
+/* ── nav ─────────────────────────────────────────────────── */
+nav.toc{background:rgba(236,238,231,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule2);position:sticky;top:0;z-index:40}
+nav.toc .wrap{display:flex;gap:3px;overflow-x:auto;padding-top:8px;padding-bottom:8px;scrollbar-width:thin}
+nav.toc a{font-size:.775rem;font-family:var(--font-mono);color:var(--muted);text-decoration:none;padding:5px 11px;border-radius:999px;white-space:nowrap}
+nav.toc a:hover{background:var(--white);color:var(--ink)}
+nav.toc a.on{background:var(--dark);color:var(--on-dark)}
+
+/* ── sections ────────────────────────────────────────────── */
+section{padding:60px 0;border-bottom:1px solid var(--rule)}
+section.tint{background:var(--paper2)}
+section.dark{background:var(--dark);color:var(--on-dark);border-bottom:0}
+section.dark h2,section.dark h3{color:var(--on-dark)}
+section.dark .lede{color:var(--on-dark-m)}
+section > .wrap > h2,section > .narrow > h2{font-size:clamp(1.4rem,1.1rem+1.1vw,2rem);margin-bottom:8px;max-width:26ch}
+.sechint{font-family:var(--font-mono);font-size:.71rem;letter-spacing:.14em;text-transform:uppercase;color:var(--neutral);margin-bottom:10px}
+section.dark .sechint{color:var(--brand)}
+.lede{max-width:var(--measure);color:var(--muted);font-size:1.05rem;margin-bottom:0}
+.body{max-width:var(--measure)}
+.body p{margin-bottom:1.05em}
+
+/* ── figures ─────────────────────────────────────────────── */
+figure{margin:34px 0 0;background:var(--white);border:1px solid var(--rule);border-radius:var(--radius);padding:22px 22px 18px}
+section.tint figure{background:var(--white)}
+section.dark figure{background:var(--white);border-color:var(--dark-rule);color:var(--ink)}
+figure > figcaption{margin-top:16px;padding-top:12px;border-top:1px solid var(--rule);font-size:.83rem;color:var(--muted);line-height:1.5}
+section.dark figure > figcaption{border-color:var(--rule);color:var(--muted)}
+.fignum{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-deep);display:block;margin-bottom:6px}
+.figtitle{font-weight:650;font-size:1rem;margin-bottom:3px;letter-spacing:-.01em}
+.figsub{font-size:.85rem;color:var(--muted);margin-bottom:18px}
+section.dark figure .figsub{color:var(--muted)}
+.src{font-family:var(--font-mono);font-size:.72rem;color:var(--neutral)}
+.src a{color:var(--neutral)}
+
+/* ── cards / grids ───────────────────────────────────────── */
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:26px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:26px}
+.card{background:var(--white);border:1px solid var(--rule);border-radius:var(--radius);padding:20px}
+.card h3{font-size:1rem;margin-bottom:9px}
+.card p{font-size:.92rem;color:var(--muted)}
+.card p:last-child{margin-bottom:0}
+.card.on-brand{border-left:3px solid var(--brand)}
+.card.on-warn{border-left:3px solid var(--warn)}
+.card.on-bad{border-left:3px solid var(--bad)}
+.card.on-sky{border-left:3px solid var(--sky)}
+section.dark .card{background:var(--dark2);border-color:var(--dark-rule)}
+section.dark .card p{color:var(--on-dark-m)}
+
+.pull{border-left:3px solid var(--brand);background:var(--brand-wash);padding:16px 20px;border-radius:0 var(--radius) var(--radius) 0;margin:26px 0;max-width:var(--measure)}
+.pull p{margin:0;font-size:1.02rem;color:var(--ink)}
+.pull .who{font-family:var(--font-mono);font-size:.74rem;color:var(--muted);margin-top:8px;display:block}
+
+.tag{display:inline-block;font-family:var(--font-mono);font-size:.68rem;letter-spacing:.07em;text-transform:uppercase;padding:2px 8px;border-radius:999px;border:1px solid var(--rule2);color:var(--muted);background:var(--paper2)}
+.tag.t1{background:var(--sky-wash);border-color:#b7d3e6;color:var(--sky-deep)}
+.tag.t2{background:var(--brand-wash);border-color:#c3e39a;color:var(--accent)}
+.tag.t3{background:var(--plum-wash);border-color:#d9c5e2;color:var(--plum)}
+.tag.t4{background:var(--sand-wash);border-color:#e0d3a4;color:var(--sand)}
+.tag.warn{background:var(--warn-wash);border-color:#e6cfa4;color:var(--warn)}
+.tag.bad{background:var(--bad-wash);border-color:#eebfba;color:var(--bad)}
+
+/* ── tables ──────────────────────────────────────────────── */
+.tablewrap{overflow-x:auto;margin-top:24px;border:1px solid var(--rule);border-radius:var(--radius);background:var(--white)}
+table{border-collapse:collapse;width:100%;font-size:.875rem;min-width:620px}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--rule);vertical-align:top}
+thead th{background:var(--paper3);font-size:.72rem;font-family:var(--font-mono);letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:500;position:sticky;top:0}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:var(--paper2)}
+td.num{font-family:var(--font-mono);text-align:right;white-space:nowrap}
+td strong{font-weight:650}
+caption{caption-side:bottom;text-align:left;padding:10px 14px;font-size:.8rem;color:var(--neutral)}
+
+/* ── inline bar in table ─────────────────────────────────── */
+.minibar{display:block;height:6px;border-radius:3px;background:var(--brand);min-width:2px}
+.minibar.sky{background:var(--sky)}
+.minibar.warn{background:var(--warn)}
+.minibar.n{background:var(--rule2)}
+
+/* ── misc ────────────────────────────────────────────────── */
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:.88rem;margin:0}
+.kv dt{font-family:var(--font-mono);font-size:.76rem;color:var(--neutral);text-transform:uppercase;letter-spacing:.06em;padding-top:3px}
+.kv dd{margin:0;color:var(--ink)}
+.foot{background:var(--dark);color:var(--on-dark-m);padding:46px 0 60px;font-size:.87rem}
+.foot a{color:var(--brand)}
+.foot h3{color:var(--on-dark);font-size:1rem;margin-bottom:10px}
+ol.refs{font-size:.82rem;color:var(--muted);padding-left:1.3em;max-width:var(--measure)}
+ol.refs li{margin-bottom:7px}
+hr.soft{border:0;border-top:1px solid var(--rule);margin:36px 0}
+.note{font-size:.85rem;color:var(--muted);background:var(--paper3);border-radius:var(--radius);padding:14px 16px;max-width:var(--measure)}
+@media print{nav.toc,.langbar{display:none}section{page-break-inside:avoid}}
+@media (max-width:640px){
+  section{padding:44px 0}
+  figure{padding:16px 14px 14px}
+  header.top{padding:46px 0 36px}
+}
+
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="langbar">
+    <button id="btn-en" aria-pressed="true" onclick="setLang('en')">EN</button>
+    <button id="btn-zh" aria-pressed="false" onclick="setLang('zh')">中文</button>
+  </div>
+  <div class="wrap">
+    <div class="kicker">GEMS Taiwan · iGEM 2026 · ReLeaf · Industry report</div>
+    <h1><span class="en">The bioreactor industry in 2026</span><span class="zh">2026 年的生物反應器產業</span></h1>
+    <p class="sub"><span class="en">Who makes the vessels the world's biology runs in, what happened to them in the last four years, which technologies are actually moving, and where a reactor built to sit beside a crop fits into any of it.</span><span class="zh">全世界的生物學跑在誰做的槽體裡、他們過去四年發生了什麼、哪些技術真的在移動，以及一台放在作物旁邊的反應器，究竟落在這張地圖的哪裡。</span></p>
+    <div class="statline">
+      <div><b>4.3<small>×</small></b><span class="en">spread between published estimates of the same 2025 market</span><span class="zh">同一個 2025 年市場，各家估計相差倍數</span></div>
+      <div><b>45–50<small>%</small></b><span class="en">of bioreactor revenue held by three companies</span><span class="zh">三家公司掌握的生物反應器營收占比</span></div>
+      <div><b>9</b><span class="en">fermentation facilities worldwide with a vessel above 100,000 L</span><span class="zh">全球擁有 10 萬公升以上槽體的發酵廠數量</span></div>
+      <div><b>42.3<small>%</small></b><span class="en">of facilities evaluating continuous or perfusion upstream in 2026</span><span class="zh">2026 年評估連續式或灌流上游製程的廠房比例</span></div>
+      <div><b>$357<small>m</small></b><span class="en">raised by fermentation companies in 2025, down 43.5 %</span><span class="zh">2025 年發酵公司募資額，較前一年下降 43.5%</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc"><div class="wrap">
+  <a href="#summary"><span class="en">Summary</span><span class="zh">摘要</span></a>
+  <a href="#market"><span class="en">01 Market</span><span class="zh">01 市場</span></a>
+  <a href="#cycle"><span class="en">02 The cycle</span><span class="zh">02 景氣循環</span></a>
+  <a href="#players"><span class="en">03 Players</span><span class="zh">03 玩家</span></a>
+  <a href="#tech"><span class="en">04 Technology</span><span class="zh">04 技術</span></a>
+  <a href="#entrants"><span class="en">05 Entrants</span><span class="zh">05 新進者</span></a>
+  <a href="#forces"><span class="en">06 To 2035</span><span class="zh">06 走向 2035</span></a>
+  <a href="#agri"><span class="en">07 The farm</span><span class="zh">07 農場端</span></a>
+  <a href="#releaf"><span class="en">08 ReLeaf</span><span class="zh">08 ReLeaf 定位</span></a>
+  <a href="#writing"><span class="en">09 How to write it</span><span class="zh">09 怎麼寫</span></a>
+  <a href="#method"><span class="en">Method</span><span class="zh">方法與來源</span></a>
+</div></nav>
+<section id="summary">
+<div class="wrap">
+  <div class="sechint">Executive summary</div>
+  <h2><span class="en">Eight findings</span><span class="zh">八項發現</span></h2>
+  <p class="lede"><span class="en">Written for a team building a small perfusion bioreactor and deciding what it may claim. Every figure is attributed. Where the sources disagree, the disagreement is the finding.</span><span class="zh">寫給一支正在做小型灌流生物反應器、並且要決定自己能主張什麼的團隊。所有數字都附出處。當來源彼此矛盾時，矛盾本身就是發現。</span></p>
+
+  <div class="grid2" style="margin-top:30px">
+    <div class="card on-brand"><h3>1 · <span class="en">The market's size is unknown to a factor of four</span><span class="zh">市場規模的不確定性達四倍</span></h3><p><span class="en">Nine publishers price the 2025 bioreactor market between $6.09 bn and $25.9 bn. None discloses a methodology. Company filings put a floor under the range: Sartorius Bioprocess Solutions alone was €2,865 m in 2025.</span><span class="zh">九家出版商對 2025 年生物反應器市場的估價介於 60.9 億與 259 億美元之間，沒有一家揭露方法論。公司財報為區間畫出下限：光是 Sartorius 的 Bioprocess Solutions，2025 年就有 28.65 億歐元。</span></p></div>
+    <div class="card on-brand"><h3>2 · <span class="en">The shortage is of large vessels, not of vessels</span><span class="zh">缺的是大槽，不是槽</span></h3><p><span class="en">Fewer than one fermentation facility in five has a vessel above 20,000 L and only nine in the world exceed 100,000 L, while more than half of surveyed companies want larger capacity.</span><span class="zh">不到五分之一的發酵廠擁有 20,000 L 以上的槽體，全球只有九座超過 100,000 L，而超過半數受訪公司想要更大的產能。</span></p></div>
+    <div class="card on-brand"><h3>3 · <span class="en">The downturn is over, but equipment lags</span><span class="zh">衰退結束了，但設備落後</span></h3><p><span class="en">Sartorius orders turned in Q4 2024, a year before revenue. In the first half of 2026 consumables grew about 9 % and equipment about 2 %. Two vendors are still contracting, and Donaldson wrote off $62.0 m of bioreactor acquisitions.</span><span class="zh">Sartorius 的訂單在 2024 年第四季反轉，比營收早一年。2026 年上半年耗材成長約 9%，設備約 2%。有兩家供應商仍在萎縮，而 Donaldson 對其生物反應器併購認列了 6,200 萬美元減損。</span></p></div>
+    <div class="card on-brand"><h3>4 · <span class="en">The vessel is a razor</span><span class="zh">槽體是刮鬍刀</span></h3><p><span class="en">Between 2021 and 2026 the disclosed acquisition money went to filtration, transfection reagents, biopreservation media, resins and analytics. The only two purchases of actual bioreactor companies were the smallest, and both were impaired.</span><span class="zh">2021 至 2026 年，揭露的併購金額流向過濾、轉染試劑、生物保存介質、層析介質與分析。唯二真正買下生物反應器公司的交易金額最小，而且兩筆都已減損。</span></p></div>
+    <div class="card on-brand"><h3>5 · <span class="en">Intensification is settled science</span><span class="zh">製程強化已成定論</span></h3><p><span class="en">N-1 perfusion roughly doubles titre, shown independently across four and six CHO cell lines and scaled to 500 L. Perfusion runs about five times the volumetric productivity of fed-batch. 42.3 % of facilities were evaluating it in 2026 and only 11.4 % were not considering it.</span><span class="zh">N-1 灌流使效價約倍增，在四株與六株 CHO 細胞上各自獨立證實，並放大到 500 L。灌流的體積生產力約為饋料批次的五倍。2026 年有 42.3% 的廠房正在評估，完全不考慮的只剩 11.4%。</span></p></div>
+    <div class="card on-warn"><h3>6 · <span class="en">The single-use environmental case just reversed</span><span class="zh">拋棄式的環境論證剛剛翻轉</span></h3><p><span class="en">A 2026 bottom-up analysis of real 2,000 L facilities found the carbon footprint of single-use significantly higher than assumed, with stainless steel competitive as grids decarbonise. It contradicts the 2013 and 2017 studies the industry has cited for a decade.</span><span class="zh">2026 年一份針對真實 2,000 L 廠房的由下而上分析發現，拋棄式的碳足跡顯著高於先前假設，而隨著電網去碳化，不鏽鋼具競爭力。這與產業引用了十年的 2013 與 2017 年研究相反。</span></p></div>
+    <div class="card on-bad"><h3>7 · <span class="en">Throughput is not the constraint. Approval is.</span><span class="zh">限制不是產能，是核准。</span></h3><p><span class="en">Cellares raised $327 m by June 2026 on a claim of ten times the batches of a conventional facility, and in August Bristol Myers Squibb ended a $380 m agreement because the system could not meet the requirements for commercial batches of an approved product. 168 US roles were cut.</span><span class="zh">Cellares 到 2026 年 6 月募得 3.27 億美元，主張批次產出為傳統廠房的十倍；8 月 Bristol Myers Squibb 終止 3.8 億美元的協議，理由是該系統無法滿足一項已核准產品商業批次的要求。美國裁員 168 人。</span></p></div>
+    <div class="card on-sky"><h3>8 · <span class="en">On-farm production exists, and its quality data is alarming</span><span class="zh">農場端生產是存在的，而它的品質資料令人不安</span></h3><p><span class="en">Brazil legalised on-farm bioinput production in December 2024 and it now touches a quarter of the planted area. Embrapa sampled eighteen on-farm inoculants: all eighteen were contaminated and none of the target organism was recovered from six of them.</span><span class="zh">巴西於 2024 年 12 月將農場端生物投入品生產合法化，如今已觸及四分之一的種植面積。Embrapa 取樣十八份農場自產接種劑：十八份全部受污染，其中六份完全沒有分離出目標菌。</span></p></div>
+  </div>
+
+  <div class="note" style="margin-top:30px"><span class="en"><b>What this means for a farm-side reactor.</b> The cost argument is the weakest one available and, for this team, it is also a forbidden one. The available arguments are that the architecture is the industry's own direction, that the output is a protein rather than a live cell, and that the machine answers how much rather than whether. Section 08 works through which of the earlier internal claims survive.</span><span class="zh"><b>這對農場端反應器意味著什麼。</b>成本論證是可用選項裡最弱的一個，而且對這支團隊而言還是被禁止的一個。可用的論證是：這個架構就是產業自己的方向、輸出的是蛋白質而不是活細胞、以及這台機器回答的是「多少」而不是「有沒有」。第 08 節逐項檢視先前內部主張中哪些站得住。</span></div>
+</div>
+</section>
+<section id="market">
+<div class="wrap">
+  <div class="sechint">01 · The market</div>
+  <h2><span class="en">Nobody agrees how big this industry is</span><span class="zh">沒有人對這個產業有多大達成共識</span></h2>
+  <p class="lede"><span class="en">Nine published estimates of the 2025 bioreactor market span a factor of 4.3. That is not sloppiness. It is a disagreement about what a bioreactor is: the vessel alone, the vessel plus its single-use consumables, or the whole fermenter category. Read the range, and read what each publisher counted.</span><span class="zh">九份公開報告對 2025 年生物反應器市場的估計相差 4.3 倍。這不是粗心，而是對「生物反應器是什麼」的定義分歧：只算槽體、算槽體加拋棄式耗材、還是整個發酵設備類別。要看的是區間，以及每家算了什麼。</span></p>
+
+  <figure>
+    <span class="fignum">Figure 01</span>
+    <div class="figtitle"><span class="en">The same market, priced nine ways</span><span class="zh">同一個市場，九種價格</span></div>
+    <div class="figsub"><span class="en">Published base-year market size, USD billions. Base year in brackets. All are commercial market-report landing pages; none publishes its methodology.</span><span class="zh">各家公布的基準年市場規模，單位十億美元，括號內為基準年。全部為商業市調報告頁面，皆未公開方法論。</span></div>
+    <div id="fig-spread"></div>
+    <figcaption><span class="en">The low end counts hardware. The high end counts fermenters and bioreactors together. Two independent primary checks bracket the truth from below: Sartorius Group reported FY2025 revenue of about €3.5 bn, of which Bioprocess Solutions was €2,865 m, up 9.5 % at constant currency; Repligen reported $738 m for FY2025, up 16 %. Sartorius, Thermo Fisher and Cytiva together are put at 45 to 50 % of global bioreactor revenue, and in single-use bioprocessing specifically the top four are put at 70 to 75 %.</span><span class="zh">低端只算硬體，高端把發酵槽與生物反應器一起算。兩個獨立的一手資料由下方框住真相：Sartorius 集團 2025 財年營收約 35 億歐元，其中 Bioprocess Solutions 為 28.65 億歐元，固定匯率成長 9.5%；Repligen 2025 財年 7.38 億美元，成長 16%。Sartorius、Thermo Fisher 與 Cytiva 合計約占全球生物反應器營收 45 至 50%；單就拋棄式生物製程而言，前四大約占 70 至 75%。</span>
+    <span class="src">Sources: Mordor Intelligence; Credence Research; Precision Business Insights; Precedence Research; Global Market Insights; Research and Markets; Roots Analysis; InsightAce Analytic; Sartorius AG FY2025 preliminary results; Repligen FY2025 results</span></figcaption>
+  </figure>
+
+  <div class="grid3">
+    <div class="card on-sky"><h3><span class="en">Hardware is the small half</span><span class="zh">硬體是比較小的那一半</span></h3><p><span class="en">Wider single-use bioprocessing, meaning bags, filters, tubing and sensors, is put at $16.5 bn in 2024 growing to $33.7 bn by 2030. The consumable stream is larger than the machine that consumes it.</span><span class="zh">更廣義的拋棄式生物製程，包含袋體、濾器、管路與感測器，2024 年估計為 165 億美元，2030 年成長到 337 億美元。耗材流比消耗它的機器還大。</span></p></div>
+    <div class="card on-sky"><h3><span class="en">Stainless has not lost</span><span class="zh">不鏽鋼並沒有輸</span></h3><p><span class="en">Stainless steel still takes about 47 % of 2025 bioreactor revenue. Over 90 % of surveyed facilities use single-use somewhere, which is a penetration figure and is routinely misquoted as a volume share. The two are not the same claim.</span><span class="zh">不鏽鋼仍占 2025 年生物反應器營收約 47%。超過 90% 的受訪廠房「在某處」使用拋棄式，這是滲透率，卻經常被誤引為體積占比。兩者不是同一個主張。</span></p></div>
+    <div class="card on-sky"><h3><span class="en">The disagreement is structural</span><span class="zh">分歧是結構性的</span></h3><p><span class="en">On single-use bioreactor growth, Roots Analysis says 9.0 % a year and Precedence says 18.3 %. One of those describes a maturing category and the other a compounding one. No public methodology exists to adjudicate.</span><span class="zh">對於拋棄式生物反應器的成長率，Roots Analysis 說每年 9.0%，Precedence 說 18.3%。一個描述成熟市場，一個描述持續複利的市場。沒有公開方法論可供裁決。</span></p></div>
+  </div>
+
+  <figure>
+    <span class="fignum">Figure 02</span>
+    <div class="figtitle"><span class="en">Capacity grows at 6.5 % a year, demand at 11 %</span><span class="zh">產能每年成長 6.5%，需求每年成長 11%</span></div>
+    <div class="figsub"><span class="en">Global installed mammalian biomanufacturing capacity and demand, thousands of litres. BioProcess Technology Group bioTRAK database, reported in BioProcess International and the CPhI Annual Report.</span><span class="zh">全球已裝機的哺乳動物細胞生產產能與需求，單位千公升。BioProcess Technology Group bioTRAK 資料庫，載於 BioProcess International 與 CPhI 年度報告。</span></div>
+    <div id="fig-capacity"></div>
+    <figcaption><span class="en">Installed capacity still exceeds demand roughly two to one in absolute litres, and the gap is closing. That is the arithmetic behind the CDMO crunch: in BioPlan's 2026 survey 49 % of qualified respondents reported difficulty finding a contract manufacturer with available mammalian capacity, up from 41.3 % a year earlier. For gene therapy the figure is 55.9 %, for cell therapy 55.6 %.</span><span class="zh">以絕對公升數計，已裝機產能仍約為需求的兩倍，但差距正在縮小。這就是 CDMO 產能吃緊背後的算術：在 BioPlan 2026 年調查中，49% 的合格受訪者表示難以找到有哺乳動物產能可用的委託製造商，一年前是 41.3%。基因治療為 55.9%，細胞治療為 55.6%。</span>
+    <span class="src">Sources: BPTG/BDO bioTRAK via BioProcess International; BioPlan Associates 23rd Annual Report via Contract Pharma</span></figcaption>
+  </figure>
+
+  <figure>
+    <span class="fignum">Figure 03</span>
+    <div class="figtitle"><span class="en">Almost everything ever built is small</span><span class="zh">蓋出來的東西，幾乎全都很小</span></div>
+    <div class="figsub"><span class="en">Fermentation facilities by largest vessel size, from the Capacitor database: 150+ facilities in 30+ countries, over 30 million litres catalogued.</span><span class="zh">依最大槽體尺寸區分的發酵廠數量，來自 Capacitor 資料庫：30 多國、150 多座廠、逾 3,000 萬公升。</span></div>
+    <div id="fig-vessels"></div>
+    <figcaption><span class="en">Fewer than one facility in five has a vessel above 20,000 L, and only nine in the world are above 100,000 L, while more than half of the companies surveyed said they were looking for larger capacity. If every company using Synonym's own modelling tool built the largest facility it had modelled, over 595 million litres would be needed, more than ten times what the database holds. This is the capacity crunch, and it is a shortage of large vessels specifically, not of vessels.</span><span class="zh">不到五分之一的廠有 20,000 L 以上的槽體，全世界只有九座超過 100,000 L；但超過半數受訪公司說他們正在找更大的產能。若每家使用 Synonym 建模工具的公司都蓋出它模擬過的最大廠，需要超過 5.95 億公升，是資料庫現有量的十倍以上。這就是所謂產能荒，而且缺的明確是「大槽」，不是「槽」。</span>
+    <span class="src">Sources: Synonym / Blue Horizon / GFI / Material Innovation Initiative, State of Global Fermentation Capacity; AgFunderNews; GEN</span></figcaption>
+  </figure>
+
+  <figure>
+    <span class="fignum">Figure 04</span>
+    <div class="figtitle"><span class="en">What a litre of capacity costs</span><span class="zh">一公升產能要多少錢</span></div>
+    <div class="figsub"><span class="en">Capital cost per litre, derived from published bills of materials and equipment listings. Log-like ladder; each rung is a different question.</span><span class="zh">每公升資本成本，由公開的物料清單與設備報價推導。各層問的其實是不同問題。</span></div>
+    <div id="fig-costladder"></div>
+    <figcaption><span class="en">Per-litre cost falls by more than an order of magnitude from a 2,000 L single-use system to a 200,000 L stainless vessel. This is the entire economic argument for scaling up, and it is why the industry built large tanks for forty years. It is also why nobody sells a small reactor on cost per litre. Small reactors are sold on speed, parallelism and the cost of being wrong.</span><span class="zh">從 2,000 L 拋棄式系統到 200,000 L 不鏽鋼槽，每公升成本下降超過一個數量級。這就是「放大」的全部經濟論證，也是產業蓋了四十年大槽的原因。同樣地，這也是為什麼沒有人用「每公升成本」來賣小型反應器。小型反應器賣的是速度、平行性，以及「猜錯的代價」。</span>
+    <span class="src">Sources: Lever VC, Scale-up Costs of Precision Fermentation, Table 7; Humbird 2021 doi:10.1002/bit.27848; Risner et al. via EA Forum comparison; EquipNet/QuestPair listing for Thermo HyPerforma 2000 L. Derived figures are marked in the chart.</span></figcaption>
+  </figure>
+
+  <div class="note"><span class="en"><b>A caution about the numbers on this page.</b> Every market-size figure above comes from a commercial market-report landing page. None publishes a methodology, a sample, or a definition of the addressable base. Three aggregator sites that surfaced repeatedly with confident dollar-per-litre figures, and one widely repeated "25 million litres of global precision fermentation capacity" claim, could not be traced to any primary document and have been left out. Company filings, the BioPlan and bioTRAK surveys, the Capacitor database and the peer-reviewed techno-economic papers are the load-bearing sources here.</span><span class="zh"><b>關於本頁數字的提醒。</b>上述所有市場規模數字均來自商業市調報告頁面，皆未公開方法論、樣本或可計算基數的定義。有三個聚合網站反覆給出看似明確的每公升價格，以及一則流傳甚廣的「全球精準發酵產能約 2,500 萬公升」說法，都無法追溯到任何一手文件，已一律排除。真正承重的來源是公司財報、BioPlan 與 bioTRAK 調查、Capacitor 資料庫，以及同儕審查的技術經濟論文。</span></div>
+</div>
+</section>
+<section id="cycle" class="tint">
+<div class="wrap">
+  <div class="sechint">02 · The cycle</div>
+  <h2><span class="en">The industry has just come through its first real downturn</span><span class="zh">這個產業剛剛走過它第一次真正的衰退</span></h2>
+  <p class="lede"><span class="en">Customers over-ordered through the pandemic, then stopped buying while they worked through the stock. Sartorius is the clearest window on it, because it reports order intake separately from sales, and the two moved a year apart.</span><span class="zh">客戶在疫情期間超額下單，接著在消化庫存的期間停止採購。Sartorius 是觀察這件事最清楚的窗口，因為它把訂單與銷售分開揭露，而這兩者相差了一年。</span></p>
+
+  <figure>
+    <span class="fignum">Figure 05</span>
+    <div class="figtitle"><span class="en">Orders turned a year before revenue did</span><span class="zh">訂單比營收早一年反轉</span></div>
+    <div class="figsub"><span class="en">Sartorius Bioprocess Solutions, year-on-year change at constant currency. Order intake against sales.</span><span class="zh">Sartorius Bioprocess Solutions 事業部，固定匯率下的年增率。訂單對銷售。</span></div>
+    <div id="fig-cycle"></div>
+    <figcaption><span class="en">Order intake fell 21.1 % in 2023 and rose 12.7 % in 2024, while sales fell 17.6 % then went nowhere. Q4 2024 was the turn, with divisional orders up 23.1 %. Sales followed in 2025, up 9.5 %, and the first half of 2026 grew 8.3 %. Inside that recovery, consumables grew about 9 % while equipment grew about 2 %. Capital equipment is still the laggard, which matters to anyone selling a machine rather than a bag.</span><span class="zh">2023 年訂單下滑 21.1%，2024 年回升 12.7%，同期銷售先跌 17.6%、再原地踏步。2024 年第四季是轉折點，事業部訂單成長 23.1%。銷售在 2025 年跟上，成長 9.5%，2026 年上半年成長 8.3%。在這波復甦裡，耗材成長約 9%，設備只成長約 2%。落後的仍然是資本設備，這對賣機器而不是賣袋子的人很重要。</span>
+    <span class="src">Source: Sartorius AG preliminary and half-year results, FY2023 to H1 2026</span></figcaption>
+  </figure>
+
+  <div class="grid3">
+    <div class="card on-brand"><h3><span class="en">Recovered</span><span class="zh">已復甦</span></h3><p><span class="en">Merck's Process Solutions went from organic minus 6.4 % in 2024 to plus 10.7 % in 2025 and plus 14.7 % in the second quarter of 2026. Repligen went from $632 m in 2023 and $634 m in 2024 to $738 m in 2025, and guides $813 to $835 m for 2026.</span><span class="zh">Merck 的 Process Solutions 從 2024 年有機衰退 6.4%，變成 2025 年成長 10.7%、2026 年第二季成長 14.7%。Repligen 從 2023 年 6.32 億、2024 年 6.34 億美元，到 2025 年 7.38 億美元，2026 年指引 8.13 至 8.35 億美元。</span></p></div>
+    <div class="card on-warn"><h3><span class="en">Still falling</span><span class="zh">仍在下滑</span></h3><p><span class="en">Eppendorf's bioprocess unit fell 25.6 % in 2024 to €88.1 m and a further 11.5 % in 2025 to €78.0 m, now about eight per cent of group revenue. Getinge's Life Science order intake fell 10.9 % in the fourth quarter of 2025, the only bioprocess-exposed order book to turn negative going into 2026.</span><span class="zh">Eppendorf 的生物製程部門 2024 年下滑 25.6% 至 8,810 萬歐元，2025 年再跌 11.5% 至 7,800 萬歐元，現在約占集團營收 8%。Getinge 的 Life Science 訂單在 2025 年第四季下滑 10.9%，是唯一在進入 2026 年時訂單轉負的生物製程相關業務。</span></p></div>
+    <div class="card on-bad"><h3><span class="en">Permanently written down</span><span class="zh">已永久減損</span></h3><p><span class="en">Donaldson bought its way into bioprocessing with roughly $275 m of tuck-ins, then took a $62.0 m impairment in its financial year to July 2025: $46.6 m against Univercells Technologies and $15.4 m against Solaris Biotech, citing weaker bioprocessing capital spending. The downturn's permanent damage landed on the sub-scale entrants, not on the incumbents.</span><span class="zh">Donaldson 以約 2.75 億美元的併購進入生物製程，接著在 2025 年 7 月止的財年認列 6,200 萬美元減損：Univercells Technologies 4,660 萬美元、Solaris Biotech 1,540 萬美元，理由是生物製程資本支出疲弱。這波衰退的永久性傷害落在規模不足的新進者身上，不是在既有巨頭身上。</span></p></div>
+  </div>
+</div>
+</section>
+<section id="players">
+<div class="wrap">
+  <div class="sechint">03 · The players</div>
+  <h2><span class="en">Five layers, not three, and the vessel is the least valuable one</span><span class="zh">五層，不是三層，而槽體是其中最不值錢的一層</span></h2>
+  <p class="lede"><span class="en">The usual framing splits the industry into equipment giants, hardware disruptors and cloud platforms. That misses the two layers where the money actually moved between 2022 and 2026.</span><span class="zh">常見的分法把產業切成設備巨頭、硬體破壞者與雲端平台。這個分法漏掉了 2022 至 2026 年間，錢真正流動的那兩層。</span></p>
+
+  <div class="tablewrap">
+  <table>
+    <caption><span class="en">Table 1. The industry in five layers. Revenue figures are the most recent disclosed.</span><span class="zh">表 1。產業的五個層次。營收為最近一次揭露值。</span></caption>
+    <thead><tr>
+      <th style="width:19%"><span class="en">Layer</span><span class="zh">層次</span></th>
+      <th style="width:23%"><span class="en">Who</span><span class="zh">誰</span></th>
+      <th><span class="en">What they are genuinely best at</span><span class="zh">他們真正擅長什麼</span></th>
+    </tr></thead>
+    <tbody>
+      <tr><td><span class="tag t1">1</span> <strong><span class="en">Platform integrators</span><span class="zh">平台整合商</span></strong></td>
+        <td>Sartorius, Danaher (Cytiva, Pall), Thermo Fisher, Merck KGaA</td>
+        <td><span class="en">Not the vessel. The filed process. Cytiva supports more than 90 % of global monoclonal antibody production volume, and its moat is chromatography media inside approved processes. Sartorius Bioprocess Solutions was €2,865 m in 2025, more than three quarters of group sales. Thermo's answer at scale is the 5,000 L DynaDrive with a 20 to 1 turndown.</span><span class="zh">不是槽體，是已備查的製程。Cytiva 支撐全球九成以上的單株抗體生產量，護城河是「已核准製程」裡的層析介質。Sartorius 的 Bioprocess Solutions 2025 年營收 28.65 億歐元，超過集團的四分之三。Thermo 在大規模端的答案是 20 比 1 調節比的 5,000 L DynaDrive。</span></td></tr>
+      <tr><td><span class="tag t1">2</span> <strong><span class="en">Specialist vessel makers</span><span class="zh">槽體專業廠</span></strong></td>
+        <td>Eppendorf, Getinge / Applikon, ABEC, PBS Biotech, INFORS HT, Bioengineering AG, Distek, Cellexus</td>
+        <td><span class="en">Geometry and range. ABEC sits at the extreme with a 6,000 L single-use bioreactor and, unusually, a non-proprietary film supply chain. PBS Biotech sells a vertical wheel from 0.1 L to 80 L for shear-sensitive cells. This is also the layer taking the most damage: Eppendorf's bioprocess revenue has fallen two years running.</span><span class="zh">幾何形狀與量程。ABEC 位於極端，做到 6,000 L 拋棄式生物反應器，而且少見地採用非專屬的膜材供應鏈。PBS Biotech 賣的是 0.1 L 到 80 L 的垂直輪，用於剪切敏感細胞。這一層受傷也最重：Eppendorf 的生物製程營收已連續兩年下滑。</span></td></tr>
+      <tr><td><span class="tag t2">3</span> <strong><span class="en">Intensification and component suppliers</span><span class="zh">製程強化與零組件供應商</span></strong></td>
+        <td>Repligen, Pall, Metenova, 908 Devices, sensor and film makers</td>
+        <td><span class="en">Selling the physics rather than the tank. Repligen's XCell ATF cell retention device is the reference part for perfusion and N-1 intensification, and the company grew 16 % in 2025 while vessel makers shrank. It is the purest listed bet on intensification.</span><span class="zh">賣的是物理，不是桶槽。Repligen 的 XCell ATF 細胞截留裝置，是灌流與 N-1 製程強化的參考零件；2025 年這家公司成長 16%，而槽體廠在萎縮。它是上市公司中對製程強化最純粹的押注。</span></td></tr>
+      <tr><td><span class="tag t4">4</span> <strong><span class="en">Capacity operators</span><span class="zh">產能營運商</span></strong></td>
+        <td>WuXi Biologics, Boehringer Ingelheim, Lonza, Liberation Bioindustries, Planetary, Cauldron</td>
+        <td><span class="en">Selling litres and batches, not steel. WuXi Biologics planned about 430,000 L of capacity from 2024 and runs the world's largest single-use line at 36,000 L. Its revenue grew 16.7 % in 2025 and 18.4 % in the first half of 2026, which is the plainest evidence that the BIOSECURE Act has not yet bitten commercially.</span><span class="zh">賣的是公升數與批次，不是鋼。WuXi Biologics 規劃自 2024 年起約 43 萬公升產能，並運轉全球最大的 36,000 L 拋棄式產線。其 2025 年營收成長 16.7%、2026 年上半年成長 18.4%，這是 BIOSECURE 法案尚未在商業上咬到人的最直接證據。</span></td></tr>
+      <tr><td><span class="tag t3">5</span> <strong><span class="en">Intelligence layer</span><span class="zh">智慧層</span></strong></td>
+        <td>Roebling (ex-Synonym), Ark Biotech, TeselaGen, n!Biomachines, Culture Biosciences Console</td>
+        <td><span class="en">Modelling, planning and control software. This layer grew by absorbing companies that failed to sell hardware. No incumbent has published a quantified digital or AI revenue line, so treat vendor claims here as marketing until a segment number appears.</span><span class="zh">建模、規劃與控制軟體。這一層是靠吸收「賣不動硬體的公司」長大的。沒有任何一家既有大廠公布過數位或 AI 的量化營收，因此在看到分部數字之前，這裡的廠商說法都當作行銷看待。</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <figure>
+    <span class="fignum">Figure 08</span>
+    <div class="figtitle"><span class="en">Nobody bought a bioreactor company for its bioreactor</span><span class="zh">沒有人為了生物反應器去買一家生物反應器公司</span></div>
+    <div class="figsub"><span class="en">Disclosed value of bioprocess acquisitions 2021 to 2026, grouped by what was actually bought. USD millions.</span><span class="zh">2021 至 2026 年生物製程併購的揭露金額，依「實際買到什麼」分組，單位百萬美元。</span></div>
+    <div id="fig-ma"></div>
+    <figcaption><span class="en">Between 2021 and 2026 the disclosed money went to filtration, transfection reagents, biopreservation media, mixing, chromatography resins and process analytics. The two acquisitions that were actually of bioreactor companies, Solaris at about $46 m and Univercells Technologies at about $148 m, are the two smallest on the chart and both were written down in 2025. The industry has said clearly where it thinks value sits. The vessel is a razor, and the incumbents are buying blades.</span><span class="zh">2021 至 2026 年間，揭露的金額流向了過濾、轉染試劑、生物保存介質、混合、層析介質與製程分析。真正買下生物反應器公司的兩筆交易，Solaris 約 4,600 萬美元與 Univercells Technologies 約 1.48 億美元，是圖上最小的兩筆，而且兩筆都在 2025 年被減損。產業已經很清楚地說出它認為價值在哪裡。槽體是刮鬍刀，而巨頭在買刀片。</span>
+    <span class="src">Sources: company press releases and SEC filings as listed in the source table</span></figcaption>
+  </figure>
+
+  <div class="note"><span class="en"><b>China is gaining share in consumables first.</b> Duoning Biotechnology, the best-documented Chinese case, went from RMB 193 m of revenue in 2020 to RMB 843 m in 2024, ranked fourth nationally in single-use products, and filed for a Hong Kong listing in January 2026. The domestically supplied share of China's bioprocess market rose from 19.2 % in 2017 to 26.4 % in 2021 on a market that grew from $1.0 bn to $5.1 bn. The pattern is bags and media first, vessels and control systems second.</span><span class="zh"><b>中國先在耗材上拿下份額。</b>資料最完整的中國案例多寧生物，營收從 2020 年人民幣 1.93 億元成長到 2024 年 8.43 億元，在拋棄式產品排名全國第四，並於 2026 年 1 月申請香港上市。中國生物製程市場的國產供應占比，從 2017 年的 19.2% 上升到 2021 年的 26.4%，同期市場由 10 億美元成長到 51 億美元。順序是先袋體與培養基，再槽體與控制系統。</span></div>
+</div>
+</section>
+<section id="tech">
+<div class="wrap">
+  <div class="sechint">04 · Technology</div>
+  <h2><span class="en">Four technologies, at four very different stages</span><span class="zh">四項技術，四個完全不同的階段</span></h2>
+  <p class="lede"><span class="en">Process intensification has stopped being argued about. Single-use has just had its central environmental claim reversed. Process analytics has split into what is deployed and what is demonstrated. Digital twins are roughly a decade behind their own marketing.</span><span class="zh">製程強化已經沒有人在爭論。拋棄式技術的核心環境主張剛剛被推翻。製程分析技術分裂成「已部署」與「只做過展示」兩塊。數位孿生大約落後自己的行銷語言十年。</span></p>
+
+  <figure>
+    <span class="fignum">Figure 06</span>
+    <div class="figtitle"><span class="en">Perfusion is roughly five times as productive per litre per day</span><span class="zh">以每公升每日計，灌流的生產力約為五倍</span></div>
+    <div class="figsub"><span class="en">Volumetric productivity, grams per litre per day, CHO monoclonal antibody processes. Peer-reviewed comparative scale-down study.</span><span class="zh">體積生產力，公克／公升／日，CHO 單株抗體製程。同儕審查的縮小規模比較研究。</span></div>
+    <div id="fig-prod"></div>
+    <figcaption><span class="en">Perfusion at about 100 million cells per mL sustains more than 1 g/L/day for fifty days. Fed-batch peaks at 20 to 30 million cells per mL and 5.2 g/L over fifteen days. The intermediate step, N-1 perfusion, is the one almost everyone actually takes: it raises the seeding density of an otherwise unchanged fed-batch reactor. Xu and colleagues doubled titre across four CHO cell lines and scaled it to 500 L. Olin and colleagues reported an average 85 % titre increase and a 132 % space-time yield increase across six cell lines. This is settled, with independent multi-line datasets.</span><span class="zh">在每毫升約一億顆細胞下，灌流可維持超過 1 g/L/day 達五十天。饋料批次的峰值是每毫升 2,000 至 3,000 萬顆細胞、十五天內 5.2 g/L。中間那一步 N-1 灌流，才是幾乎所有人真正採用的：它只提高一個其餘不變的饋料批次反應器的接種密度。Xu 等人在四株 CHO 細胞上使效價倍增，並放大到 500 L。Olin 等人在六株細胞上報告效價平均提升 85%、時空產率提升 132%。這件事已成定論，而且有多株獨立資料集。</span>
+    <span class="src">Sources: doi:10.3390/pr12040806; doi:10.1186/s40643-020-00304-y; doi:10.1002/btpr.3410</span></figcaption>
+  </figure>
+
+  <div class="pull">
+    <p><span class="en">Amgen's Singapore plant, the reference case for intensified manufacturing, occupies 120,000 square feet, which the company puts at 16 % the size of a conventional facility, built in half the construction time at approximately one quarter of the capital cost.</span><span class="zh">Amgen 的新加坡廠是製程強化的標竿案例，占地 12 萬平方英尺，公司稱其為傳統廠房的 16%，建造時間減半，資本支出約為四分之一。</span></p>
+    <span class="who">Amgen Singapore fact sheet</span>
+  </div>
+
+  <figure>
+    <span class="fignum">Figure 07</span>
+    <div class="figtitle"><span class="en">The single-use carbon argument reversed in 2026</span><span class="zh">拋棄式的碳足跡論證在 2026 年翻轉</span></div>
+    <div class="figsub"><span class="en">Three shares that are routinely confused, and one finding that overturns a decade of consensus.</span><span class="zh">三個經常被混淆的比例，以及一項推翻十年共識的發現。</span></div>
+    <div id="fig-su"></div>
+    <figcaption><span class="en">Over 90 % of facilities use single-use somewhere, 46 % of installed bioreactor units are single-use, and only about 13 % of volumetric capacity is. The three figures are quoted interchangeably and mean different things; the volumetric one is the honest answer to "has single-use taken over". Then, in 2026, Reiners and colleagues analysed real facilities at 2,000 L and found the carbon footprint of single-use significantly higher than previously assumed, with filters and bags as the hotspots, and stainless steel now competitive or better as electricity grids decarbonise. This contradicts the 2013 and 2017 studies the industry has cited for a decade. Their recommendation is hybrid facilities.</span><span class="zh">超過 90% 的廠房在某處使用拋棄式，已裝機生物反應器有 46% 是拋棄式，而體積產能只有約 13%。這三個數字經常被交替引用，意義卻不同；要回答「拋棄式是否已取代一切」，體積那個才是誠實的答案。接著在 2026 年，Reiners 等人分析 2,000 L 規模的真實廠房，發現拋棄式的碳足跡顯著高於先前假設，濾器與袋體是熱點，而隨著電網去碳化，不鏽鋼現在旗鼓相當甚至更好。這與產業引用了十年的 2013 與 2017 年研究相反。他們的建議是混合式廠房。</span>
+    <span class="src">Sources: Frontiers in Sustainability 2025, doi:10.3389/frsus.2025.1536382; Reiners et al. 2026, doi:10.1002/bit.70297</span></figcaption>
+  </figure>
+
+  <div class="grid2">
+    <div class="card on-brand">
+      <h3><span class="en">Deployed: capacitance. Arriving: Raman.</span><span class="zh">已部署：電容式。正在進場：拉曼。</span></h3>
+      <p><span class="en">Permittivity probes track viable cell density with R² between 0.936 and 0.995 up to 130 million cells per mL, and using them to drive cell-specific perfusion rate cut media consumption by 24 to 26 % against volumetric control. That is infrastructure, not a demonstration. Raman models built on 1 L and 5 L vessels have been validated on a 2,000 L manufacturing bioreactor, with glucose error of 1.44 mM.</span><span class="zh">介電常數探針追蹤活細胞密度，在每毫升 1.3 億顆以下 R² 介於 0.936 至 0.995；用它驅動細胞比灌流速率，相較於體積式控制可減少 24 至 26% 的培養基消耗。那是基礎設施，不是展示。以 1 L 與 5 L 建立的拉曼模型，已在 2,000 L 生產級反應器上獲得驗證，葡萄糖誤差 1.44 mM。</span></p>
+      <p><span class="en">The FDA's operative process analytical technology framework is still the guidance finalised in October 2004.</span><span class="zh">FDA 現行有效的製程分析技術架構，仍是 2004 年 10 月定稿的那份指引。</span></p>
+    </div>
+    <div class="card on-warn">
+      <h3><span class="en">Not deployed: the digital twin</span><span class="zh">尚未部署：數位孿生</span></h3>
+      <p><span class="en">A 2025 practitioner review offers no example of a digital twin running at commercial scale, names no regulatory approval pathway, and concedes that mechanistic models drift when parameters are unspecified while data-driven models fail outside their training domain. The FDA's January 2025 draft guidance on artificial intelligence is a risk-based credibility framework for a stated context of use. It is not an approval route.</span><span class="zh">2025 年一篇從業者回顧，找不出任何一個在商業規模運行的數位孿生案例，說不出監管核准途徑，並承認機制模型在參數未指定時會偏移，而資料驅動模型在訓練域外會失效。FDA 2025 年 1 月關於人工智慧的指引草案，是針對特定使用情境的風險導向可信度架構，不是核准途徑。</span></p>
+      <p><span class="en">The closest thing to autonomy actually in production is closed-loop feeding driven by capacitance. Control, not decision-making.</span><span class="zh">真正在生產中、最接近自主的，是由電容量測驅動的閉迴路餵料。那是控制，不是決策。</span></p>
+    </div>
+  </div>
+
+  <div class="note" style="margin-top:26px"><span class="en"><b>The regulatory door for continuous processing is already open.</b> ICH Q13 was adopted at step 4 on 16 November 2022, covers therapeutic proteins as well as chemical entities, and its Annex III describes exactly a perfusion bioreactor coupled to continuous capture chromatography. FDA adopted it in March 2023, EMA from July 2023. As of May 2026 the FDA reports seventeen drugs approved using continuous manufacturing and 191 applications accepted into its Emerging Technology Program, of which six are distributed or point-of-care manufacturing.</span><span class="zh"><b>連續式製程的監管大門已經打開。</b>ICH Q13 於 2022 年 11 月 16 日在第四階段通過，涵蓋治療性蛋白與化學實體，其附錄三描述的正是灌流生物反應器串接連續式捕捉層析。FDA 於 2023 年 3 月採用，EMA 自 2023 年 7 月起適用。截至 2026 年 5 月，FDA 表示已有十七項藥品以連續式製造核准，新興技術計畫共受理 191 件申請，其中六件屬分散式或照護點製造。</span></div>
+</div>
+</section>
+<section id="entrants" class="tint">
+<div class="wrap">
+  <div class="sechint">05 · New entrants</div>
+  <h2><span class="en">The challengers, and what happened to them</span><span class="zh">挑戰者，以及他們的下場</span></h2>
+  <p class="lede"><span class="en">Between 2020 and 2022 a wave of companies set out to replace the stirred tank. Four years later the survivors have one thing in common, and it is not the reactor.</span><span class="zh">2020 到 2022 年間，一批新創立志取代攪拌槽。四年後，活下來的公司有一個共同點，而那個共同點不是反應器。</span></p>
+
+  <figure>
+    <span class="fignum">Figure 09</span>
+    <div class="figtitle"><span class="en">What they were funded to build, and what they sell today</span><span class="zh">當初拿錢做的事，與今天實際賣的東西</span></div>
+    <div class="figsub"><span class="en">Selected hardware entrants, 2021 to 2026. Green means the original hardware thesis is still the product.</span><span class="zh">2021 至 2026 年間主要硬體新創。綠色代表原本的硬體主張仍然是今天的產品。</span></div>
+    <div id="fig-pivot"></div>
+    <figcaption><span class="en">Two of the loudest hardware companies now sell software. Ark Biotech, which modelled million-litre vessels and claimed a reactor 90 % cheaper than the largest in the world, today sells agentic bioprocess simulation and has raised $10.7 M across two rounds. Synonym, which built the Capacitor capacity marketplace, became Roebling on 3 February 2026 and sells capital-project planning to chemicals and critical minerals as well as biology. The pattern is not failure. It is that the modelling layer monetises when the steel does not.</span><span class="zh">兩家聲量最大的硬體公司現在賣的是軟體。Ark Biotech 曾經模擬百萬公升槽體、宣稱反應器比全世界最大的便宜 90%，今天賣的是 agentic 生物製程模擬，兩輪合計僅募得 1,070 萬美元。Synonym 曾建立 Capacitor 產能媒合平台，2026 年 2 月 3 日更名為 Roebling，客戶擴及化學與關鍵礦產。這不是失敗，而是：當鋼槽賣不動時，模型層才是能收錢的地方。</span>
+    <span class="src">Sources: ark-biotech.com; tracxn; roebling.com/resources/synonym-is-now-roebling; pow.bio; thecultivatedb.com; n-factorial.com</span></figcaption>
+  </figure>
+
+  <div class="grid2">
+    <div class="card on-bad">
+      <h3><span class="en">The year's biggest reversal: Cellares</span><span class="zh">今年最大的反轉：Cellares</span></h3>
+      <p><span class="en">Cellares closed a $257 M Series D on 28 January 2026, co-led by BlackRock and Eclipse, and grew it to $327 M on 15 June. Its Cell Shuttle claimed up to ten times more batches than a conventional CDMO at comparable footprint and headcount. On about 26 August 2026 Bristol Myers Squibb ended the partnership, having concluded that Cell Shuttle could not meet the requirements for commercial batches of Breyanzi. The underlying 2024 agreement reserved $380 M of capacity. 168 US positions were cut, roughly 100 of them effective 20 October 2026.</span><span class="zh">Cellares 於 2026 年 1 月 28 日完成 2.57 億美元 D 輪，由 BlackRock 與 Eclipse 共同領投，6 月 15 日擴大至 3.27 億美元。其 Cell Shuttle 宣稱在相同廠房面積與人力下，批次產出可達傳統 CDMO 的十倍。2026 年 8 月 26 日前後，Bristol Myers Squibb 終止合作，理由是 Cell Shuttle 無法滿足 Breyanzi 商業批次的要求。該筆 2024 年協議原本保留 3.8 億美元產能。美國裁員 168 人，其中約 100 人於 2026 年 10 月 20 日生效。</span></p>
+      <p><span class="en"><b>The lesson for any hardware challenger.</b> The binding constraint is not throughput. It is process equivalence to a route that a regulator has already approved.</span><span class="zh"><b>對任何硬體挑戰者的啟示。</b>真正的限制不是產能，而是與監管機關「已核准製程」的等價性。</span></p>
+    </div>
+    <div class="card on-brand">
+      <h3><span class="en">The quiet correction: Culture Biosciences</span><span class="zh">安靜的修正：Culture Biosciences</span></h3>
+      <p><span class="en">The company most often described as the AWS of biomanufacturing did not wind down. It stopped renting runs and started selling the box. Stratyx 250, launched 1 April 2025, is a 250 mL single-use cart-mounted reactor with cloud control, optionally running a Cytiva consumable derived from Xcellerex. A Series C closed on 16 December 2025 led by existing investors. About $107 M raised, about 73 staff in May 2026.</span><span class="zh">這家最常被稱為「生物製造界 AWS」的公司並沒有收攤，而是停止出租跑批、改成賣機器。2025 年 4 月 1 日推出的 Stratyx 250 是 250 mL 拋棄式、推車式、雲端控制的反應器，可選用源自 Xcellerex 的 Cytiva 耗材。2025 年 12 月 16 日由既有投資人領投完成 C 輪。累計募資約 1.07 億美元，2026 年 5 月約 73 名員工。</span></p>
+      <p><span class="en">Its own numbers for the box, all vendor stated: 16 % lower cost per run, 25 % faster timelines, 30 % better scale-up success, five-month payback. The service years became the training data.</span><span class="zh">其自行公布的數據（皆為廠商說法）：每批成本降低 16%、時程加快 25%、放大成功率提升 30%、五個月回本。服務期累積的資料，成了產品的訓練資料。</span></p>
+    </div>
+  </div>
+
+  <figure>
+    <span class="fignum">Figure 10</span>
+    <div class="figtitle"><span class="en">Architecture changes cost more than scale does</span><span class="zh">改架構比放大尺寸更能降低成本</span></div>
+    <div class="figsub"><span class="en">Modelled cost of goods for cultivated meat, by production vessel. Negulescu et al., Biotechnology and Bioengineering, 2023.</span><span class="zh">細胞培養肉的模型化生產成本，依生產槽體區分。Negulescu 等，Biotechnology and Bioengineering，2023。</span></div>
+    <div id="fig-tea"></div>
+    <figcaption><span class="en">Going from a 42,000 L stirred tank to a 210,000 L stirred tank, a five-fold increase in scale, took modelled cost from $30.4 to $20.8 per kg. Switching to a 260,000 L airlift vessel took it to $13.0. The cheaper number came from removing the impeller, not from adding litres. This is the strongest published argument that reactor architecture, not reactor size, is where the remaining cost sits.</span><span class="zh">從 42,000 L 攪拌槽放大到 210,000 L 攪拌槽，尺寸增加五倍，模型成本從每公斤 30.4 美元降到 20.8 美元。改用 260,000 L 氣舉式槽體則降到 13.0 美元。便宜的那個數字來自「拿掉葉輪」，而不是「加大體積」。這是目前最強的一份公開論證：剩下的成本落在反應器架構，不在反應器尺寸。</span>
+    <span class="src">Source: Negulescu et al. 2023, doi:10.1002/bit.28324</span></figcaption>
+  </figure>
+
+  <div class="tablewrap">
+  <table>
+    <caption><span class="en">Table 3. Selected entrants, verified status as of September 2026. Performance figures are vendor claims unless a citation is given.</span><span class="zh">表 3。主要新進者，2026 年 9 月查證狀態。除另註明出處外，效能數字皆為廠商自述。</span></caption>
+    <thead><tr>
+      <th><span class="en">Company</span><span class="zh">公司</span></th>
+      <th><span class="en">Architecture</span><span class="zh">架構</span></th>
+      <th><span class="en">Capital</span><span class="zh">資本</span></th>
+      <th><span class="en">Status, Sept 2026</span><span class="zh">2026 年 9 月狀態</span></th>
+    </tr></thead>
+    <tbody>
+      <tr><td><strong>Capra Biosciences</strong><br><span class="tag t2">biofilm</span></td>
+        <td><span class="en">Continuous-flow biofilm reactor, modular. Scaled 10 mL to 400 L under a BioMADE project, 2023 to 2025.</span><span class="zh">連續流生物膜反應器，模組化。2023 至 2025 年於 BioMADE 專案下自 10 mL 放大至 400 L。</span></td>
+        <td class="num">$5.75M<br><span class="src">equity</span></td>
+        <td><span class="en">Operating. Government money exceeds equity: a $7.5 M HHS/ASPR agreement in July 2024 and DARPA's Switch programme in September 2025.</span><span class="zh">營運中。政府資金高於股權：2024 年 7 月 HHS/ASPR 750 萬美元協議，2025 年 9 月 DARPA Switch 計畫。</span></td></tr>
+      <tr><td><strong>Pow.bio</strong><br><span class="tag t2">continuous</span></td>
+        <td><span class="en">Two chambers. One grows biomass and feeds the other continuously, with a filtration loop recycling cells and removing inhibitory waste. Decoupling is what defeats genetic drift.</span><span class="zh">兩個腔室。一個養菌並持續餵給另一個，配合過濾迴路回收細胞、移除抑制性廢物。解耦是對付基因漂移的關鍵。</span></td>
+        <td class="num">$13.5M<br><span class="src">to $19.3M</span></td>
+        <td><span class="en">Operating. 2.5x to 6x productivity depending on host. Scaled to 3,000 L with ATV Technologies and Bühler. Named customers include California Cultured.</span><span class="zh">營運中。依宿主不同生產力提升 2.5 至 6 倍。與 ATV Technologies 及 Bühler 放大至 3,000 L。已具名客戶包含 California Cultured。</span></td></tr>
+      <tr><td><strong>Planetary Group</strong><br><span class="tag t2">licensing</span></td>
+        <td><span class="en">Biomass fermentation for mycelial protein, monetised by licensing the process to companies that already own tanks.</span><span class="zh">菌絲蛋白的生物質發酵，靠授權製程給「已經有槽」的公司來變現。</span></td>
+        <td class="num">~CHF 32M</td>
+        <td><span class="en">The only entrant here with confirmed running commercial output. Aarberg site live; ALDI Suisse listing in 242 stores from July 2025.</span><span class="zh">名單中唯一確認有商業產出的公司。Aarberg 廠已運轉，2025 年 7 月起於 ALDI Suisse 242 家門市上架。</span></td></tr>
+      <tr><td><strong>Cauldron Ferm</strong><br><span class="tag t2">retrofit</span></td>
+        <td><span class="en">Continuous "hyper-fermentation" plus proprietary medium. Claims 50 % lower unit cost, 20 % more output, 45 % less capex, at 10,000 L.</span><span class="zh">連續式「超級發酵」加上自有培養基。宣稱單位成本降 50%、產出增 20%、資本支出減 45%，規模 10,000 L。</span></td>
+        <td class="num">$26M</td>
+        <td><span class="en">Operating, retrofit-first. A 500,000 L Mackay facility is announced; construction status not confirmed.</span><span class="zh">營運中，以改造既有廠房為主。已宣布 500,000 L 的 Mackay 廠，施工狀態未獲確認。</span></td></tr>
+      <tr><td><strong>Liberation Bioindustries</strong><br><span class="tag t4">capacity</span></td>
+        <td><span class="en">600,000 L nameplate built from 150,000 L fermenters with dedicated downstream. About $115 M of plant.</span><span class="zh">以 150,000 L 發酵槽組成 600,000 L 名目產能，配備專屬下游。廠房造價約 1.15 億美元。</span></td>
+        <td class="num">$125.5M<br><span class="src">deployable</span></td>
+        <td><span class="en">Start of production has slipped from late 2024 to 2025 to 2026, and no announcement confirms it has begun. Founder moved from CEO to CTO in January 2026.</span><span class="zh">投產時程自 2024 年底延到 2025 年、再延到 2026 年，且無任何公告確認已開始。創辦人於 2026 年 1 月由 CEO 轉任 CTO。</span></td></tr>
+      <tr><td><strong>The Cultivated B</strong><br><span class="tag t2">modular</span></td>
+        <td><span class="en">AUXO V, fit for purpose rather than general purpose: impellers and sensor packages matched to one organism class. 2 to 15 L glass, 100 and 250 L pilot, engineered to order above 5,000 L.</span><span class="zh">AUXO V，走「專用」而非「通用」路線：葉輪與感測器組合對應單一菌種類別。2 至 15 L 玻璃槽、100 與 250 L 試量產，5,000 L 以上接單設計。</span></td>
+        <td class="num"><span class="src">not found</span></td>
+        <td><span class="en">Canadian arm rebranded to n!Biomachines and now sells itself as an intelligence layer. Company newsroom has not moved since 3 November 2025.</span><span class="zh">加拿大分支更名為 n!Biomachines，現以「智慧層」自我定位。公司新聞室自 2025 年 11 月 3 日起未更新。</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="pull">
+    <p><span class="en">Five cultivated-meat companies stopped operating between mid-2024 and late 2025: SCiFi Foods, Upstream Foods, CellRev, Meatable and Believer Meats. Every stated reason was the same, an inability to raise. Sector investment peaked near $1 billion in 2021.</span><span class="zh">2024 年年中到 2025 年年底，五家細胞培養肉公司停止營運：SCiFi Foods、Upstream Foods、CellRev、Meatable、Believer Meats。對外說法完全一致：募不到錢。該領域投資在 2021 年見頂，接近 10 億美元。</span></p>
+    <span class="who">FoodNavigator, 22 January 2026</span>
+  </div>
+</div>
+</section>
+<section id="forces" class="dark">
+<div class="wrap">
+  <div class="sechint">06 · To 2035</div>
+  <h2><span class="en">Regulation became the fast-moving variable</span><span class="zh">監管變成了跑得最快的那個變數</span></h2>
+  <p class="lede"><span class="en">For twenty years the slow part of biomanufacturing was the rulebook. Between December 2025 and July 2026 four governments moved at once, and the direction of all four is the same: build capacity at home, and make it easier to build it in more places.</span><span class="zh">過去二十年，生物製造裡跑得最慢的是規則書。2025 年 12 月到 2026 年 7 月之間，四個政府同時動了，而四者的方向一致：把產能建在自己國內，並且讓「建在更多地方」變得更容易。</span></p>
+
+  <figure>
+    <span class="fignum">Figure 11</span>
+    <div class="figtitle"><span class="en">Eighteen months that changed the policy floor</span><span class="zh">改變政策地板的十八個月</span></div>
+    <div class="figsub"><span class="en">Legislative and regulatory events affecting biomanufacturing capacity, 2022 to 2026.</span><span class="zh">影響生物製造產能的立法與監管事件，2022 至 2026 年。</span></div>
+    <div id="fig-policy"></div>
+    <figcaption><span class="en">Executive Order 14081 created the US National Biotechnology and Biomanufacturing Initiative in September 2022 and was rescinded on 14 March 2025. The vacuum was filled from a different direction: the National Security Commission on Emerging Biotechnology reported on 8 April 2025 with 49 recommendations and a request for at least $15 billion over five years, and the BIOSECURE Act became law inside the FY2026 defence bill on 18 December 2025. On 8 June 2026 the Department of Defense added WuXi AppTec to its list of Chinese military companies. Meanwhile the European Commission adopted a Biotech Act proposal on 16 December 2025 offering ten-month accelerated permitting for strategic biomanufacturing sites, and China adopted its 15th Five-Year Plan on 13 March 2026 with high-performance bioreactors named as a focus area.</span><span class="zh">14081 號行政命令於 2022 年 9 月建立美國國家生物技術與生物製造倡議，2025 年 3 月 14 日遭撤銷。真空由另一個方向填補：新興生物技術國家安全委員會於 2025 年 4 月 8 日提出報告，四十九項建議，並要求五年至少 150 億美元；BIOSECURE 法案於 2025 年 12 月 18 日隨 2026 財年國防授權法成為法律。2026 年 6 月 8 日，美國國防部把 WuXi AppTec 列入中國軍方企業清單。同時，歐盟執委會於 2025 年 12 月 16 日通過生技法案提案，為策略性生物製造廠提供十個月的加速許可；中國於 2026 年 3 月 13 日通過十五五規劃，明確把高性能生物反應器列為重點方向。</span>
+    <span class="src">Sources: EO 14236; NSCEB final report via CSIS and Senate; Ropes &amp; Gray on BIOSECURE enactment; EU Commission COM(2025) 1022; China Briefing</span></figcaption>
+  </figure>
+
+  <div class="grid3">
+    <div class="card"><h3><span class="en">China's share is the number that moved everything</span><span class="zh">推動一切的那個數字是中國的占比</span></h3><p><span class="en">China accounts for over 70 % of world bio-fermentation product output, on a domestic market of about RMB 1.1 trillion. The NSCEB report puts 79 % of US pharmaceutical companies as dependent on Chinese contract manufacturers.</span><span class="zh">中國占全球生物發酵產品產量七成以上，內需市場約人民幣 1.1 兆元。NSCEB 報告指出，79% 的美國製藥公司依賴中國委託製造商。</span></p></div>
+    <div class="card"><h3><span class="en">Point of need is now a funded programme</span><span class="zh">「所需之處」現在是有預算的計畫</span></h3><p><span class="en">BioMADE received $87 M from the Department of Defense in 2021 and $450 M in 2023, with a further $21.4 M across fourteen projects in April 2026. Its Maple Grove demonstration facility, 122,000 square feet with two 25,000 L fermenters, is funded at $132 M or more and due in 2028.</span><span class="zh">BioMADE 於 2021 年獲美國國防部 8,700 萬美元、2023 年 4.5 億美元，2026 年 4 月再獲 2,140 萬美元分配於十四項專案。其 Maple Grove 示範廠占地 12.2 萬平方英尺，兩座 25,000 L 發酵槽，資金 1.32 億美元以上，預計 2028 年完工。</span></p></div>
+    <div class="card"><h3><span class="en">Point of care is clinically demonstrated</span><span class="zh">照護點製造已有臨床實證</span></h3><p><span class="en">An academic centre in Thailand manufactured anti-CD19 CAR-T on a closed benchtop platform with nine of nine products made successfully, typically in twelve days, against three to five weeks for centralised commercial manufacture.</span><span class="zh">泰國一家學術中心以封閉式桌上型平台製造抗 CD19 CAR-T，九件產品全數製造成功，通常十二天完成，而集中式商業製造需三到五週。</span></p></div>
+  </div>
+
+  <figure>
+    <span class="fignum">Figure 12</span>
+    <div class="figtitle"><span class="en">The segment nobody sizes: published open hardware</span><span class="zh">沒有人估算的那一段：已發表的開源硬體</span></div>
+    <div class="figsub"><span class="en">Published build or purchase cost of open-source and academic bioreactors, US dollars. Where a design has been commercialised, both figures are shown.</span><span class="zh">開源與學術生物反應器的公開自建或購買成本，單位美元。已商品化的設計同時顯示兩個數字。</span></div>
+    <div id="fig-open"></div>
+    <figcaption><span class="en">Published do-it-yourself costs cluster between $300 and $700 for microbial-scale units, and between $2,700 and $4,000 for parallel or mechanically loaded systems. Commercialising the same design costs three to four times the paper figure: Chi.Bio was published at about $300 in PLOS Biology in 2020 and sells through its manufacturing partner at $990 for a starter set. None of the market reports in section 01 counts any of this. It is the only part of the industry where unit volume is plausibly still growing while capital is scarce.</span><span class="zh">已發表的自建成本，微生物規模落在 300 至 700 美元，平行或需機械負載的系統落在 2,700 至 4,000 美元。把同一份設計商品化，價格是論文數字的三到四倍：Chi.Bio 在 2020 年 PLOS Biology 上公布約 300 美元，透過其製造夥伴販售的入門組合為 990 美元。第 01 節的所有市場報告都沒有計入這一段。而在資本稀缺的時候，這裡是全產業中，出貨台數仍可能持續成長的唯一一塊。</span>
+    <span class="src">Sources: pioreactor.com; Steel et al. 2020 doi:10.1371/journal.pbio.3000794 and chi.bio/buy; Wong et al. 2018 doi:10.1038/nbt.4151; Open Bioeconomy Lab; Parret et al. 2025 doi:10.1016/j.ohx.2025.e00670; Gandia &amp; Christiansen 2025 doi:10.1101/2025.04.21.649716; Phycology 2026 doi:10.3390/phycology6030096</span></figcaption>
+  </figure>
+</div>
+</section>
+<section id="agri">
+<div class="wrap">
+  <div class="sechint">07 · The farm adjacency</div>
+  <h2><span class="en">Brazil already tried putting the reactor on the farm</span><span class="zh">巴西已經試過把反應器放到農場上</span></h2>
+  <p class="lede"><span class="en">This is the part of the map that a farm-side reactor actually has to answer to. There is one real precedent in the world, it is large, it is legal, and the published quality data from it is alarming.</span><span class="zh">這是農場端反應器真正必須回答的那一塊地圖。世界上只有一個真實的先例，規模很大，合法，而且已發表的品質資料令人不安。</span></p>
+
+  <div class="grid2">
+    <div class="card on-sky">
+      <h3><span class="en">The market is real and the majors are barely in it</span><span class="zh">市場是真的，而大廠幾乎不在裡面</span></h3>
+      <p><span class="en">Agricultural biologicals are put at $18.4 bn in 2025 growing to $35.0 bn by 2030, although estimates for the same year span $12.2 bn to $18.4 bn. What matters more is the share inside the majors: biologicals are 6.5 % of Corteva's crop protection revenue, 4 % of FMC's, 2.5 % of Syngenta's and 1.5 % of Bayer's, after a decade of acquisitions. The top eight biologicals companies hold only about 35 % of the category, against 38 % for the top three in seeds and crop protection.</span><span class="zh">農業生物製劑 2025 年估計 184 億美元，2030 年成長到 350 億美元，不過同一年的估計值橫跨 122 億到 184 億美元。更重要的是它在大廠內部的占比：經過十年併購，生物製劑占 Corteva 作物保護營收 6.5%、FMC 4%、Syngenta 2.5%、Bayer 1.5%。前八大生物製劑公司只握有這個類別約 35%，而種子與作物保護的前三大握有 38%。</span></p>
+    </div>
+    <div class="card on-bad">
+      <h3><span class="en">And the two biggest pure-play bets lost</span><span class="zh">而兩個最大的純粹押注輸了</span></h3>
+      <p><span class="en">Indigo Ag peaked at a $3.5 bn valuation in 2020 and raised at about $200 m in 2023, a 94 % cut. AgBiome warned it might lay off all 123 staff in December 2023 despite a record sales year, having failed to raise; Ginkgo bought its platform assets in April 2024 at a fair value of $18.2 m. Joyn Bio, the Bayer and Ginkgo joint venture, was dissolved in 2022. Scale-up and distribution killed these companies, not biology.</span><span class="zh">Indigo Ag 在 2020 年估值見頂 35 億美元，2023 年以約 2 億美元募資，跌幅 94%。AgBiome 在 2023 年 12 月警告可能資遣全部 123 名員工，儘管當年銷售創新高，原因是募不到資金；Ginkgo 於 2024 年 4 月以 1,820 萬美元的公允價值買下其平台資產。Bayer 與 Ginkgo 的合資公司 Joyn Bio 於 2022 年解散。殺死這些公司的是放大與通路，不是生物學。</span></p>
+    </div>
+  </div>
+
+  <figure>
+    <span class="fignum">Figure 13</span>
+    <div class="figtitle"><span class="en">Drying a live microbe costs orders of magnitude</span><span class="zh">把活菌乾燥，代價是數個數量級</span></div>
+    <div class="figsub"><span class="en">Reported loss of viable count during drying, log10 orders of magnitude. This is the problem a farm-side reactor is arguing against.</span><span class="zh">乾燥過程中活菌數的報告損失，以 log10 數量級表示。這正是農場端反應器所要對抗的問題。</span></div>
+    <div id="fig-dry"></div>
+    <figcaption><span class="en">Formulation buys back an order of magnitude of shelf life: formulated products hold 12 to 18 months against under three months for unformulated spores. But drying itself is where the batch goes. Freeze-drying cost Pseudomonas one to two orders of magnitude, spray-drying Pantoea agglomerans at 90 °C cost two to five, and air-drying an endophytic Paraburkholderia cost six. Ginkgo's own agricultural lead puts seed-treatment shelf stability at only two months for some products. The industry restraint lists name shelf life, cold chain, distribution and price. None of them names strain efficacy.</span><span class="zh">配方能買回一個數量級的保存期：配方化產品可維持 12 至 18 個月，未配方孢子不到三個月。但真正折損批次的是乾燥本身。冷凍乾燥使 Pseudomonas 損失一到兩個數量級，90 °C 噴霧乾燥使 Pantoea agglomerans 損失兩到五個數量級，空氣乾燥使一株內生 Paraburkholderia 損失六個數量級。Ginkgo 自己的農業負責人指出，部分產品的種子處理保存期只有兩個月。產業列出的限制因素是保存期、冷鏈、通路與價格。沒有一項是菌株效力。</span>
+    <span class="src">Sources: PMC5812248; Frontiers in Sustainable Food Systems 2025, doi:10.3389/fsufs.2025.1657000; AgFunderNews interview with Ginkgo</span></figcaption>
+  </figure>
+
+  <h3 style="margin-top:40px"><span class="en">The Brazilian precedent, and the study that should be on every farm-side reactor page</span><span class="zh">巴西的先例，以及每一個農場端反應器頁面都該引用的那份研究</span></h3>
+  <div class="body">
+    <p><span class="en">Brazil's Lei 15.070/2024, signed on 23 December 2024, is the world's first framework that explicitly separates commercial biofactory production from on-farm production for a farmer's own use. On-farm bioinputs are exempt from registration. Sale is prohibited. Strains must come from accredited germplasm collections, so multiplying a commercial product is not allowed. Bioinputs covered 26 % of Brazil's planted area in the 2023/24 harvest, and over 70 million hectares received biological control products in 2022. SoluBio, the closest thing to a commercial farm-side reactor business, serves more than two million hectares and over 400 customers on revenue above R$180 m a year. Its EBITDA margin fell from 69.6 % in 2022 to 1.7 % in 2023.</span><span class="zh">巴西於 2024 年 12 月 23 日簽署的 Lei 15.070/2024，是全世界第一個把商業生物工廠生產與農民自用的農場端生產明確分開的框架。農場端生物投入品免登記，但禁止銷售。菌株必須來自認可的種質保存中心，因此不得直接繁殖商業產品。2023/24 年期，生物投入品覆蓋巴西 26% 的種植面積；2022 年有超過 7,000 萬公頃使用生物防治產品。最接近「農場端反應器事業」的 SoluBio，服務超過 200 萬公頃、400 多個客戶，年營收超過 1.8 億雷亞爾。其 EBITDA 利潤率從 2022 年的 69.6% 降到 2023 年的 1.7%。</span></p>
+  </div>
+
+  <div class="pull">
+    <p><span class="en">Embrapa sampled eighteen on-farm inoculants across five Brazilian states. All eighteen were contaminated, and the commercial controls contained none. No <i>Bradyrhizobium</i> at all was recovered from the six samples that were supposed to contain it. Of 84 contaminant isolates across 25 genera, 44 % of the genera harbour species potentially pathogenic to humans, and 18 of 34 such isolates showed antibiotic resistance that was not intrinsic.</span><span class="zh">Embrapa 在巴西五個州取樣了十八份農場自產接種劑。十八份全數受到污染，商業對照組則完全沒有。原本應含 <i>Bradyrhizobium</i> 的六份樣品，完全沒有分離出該菌。84 株污染菌分屬 25 個屬，其中 44% 的屬含有可能對人類致病的種，而 34 株相關分離株中有 18 株表現出非固有的抗生素抗性。</span></p>
+    <span class="who">Bocatti et al., Brazilian Journal of Microbiology 2022, doi:10.1007/s42770-021-00649-2</span>
+  </div>
+
+  <div class="body">
+    <p><span class="en">Embrapa's three recommendations, taken together, read as a design specification for any credible farm-side reactor: strains only from official collections, mandatory registration of production units for traceability, and a qualified technical professional overseeing production. Embrapa also warns that the practice creates structural inequality, because large farms can hire that expertise and smallholders cannot. That is the sharpest objection a judge can put to a farm-side device, and it deserves an answer rather than a slogan.</span><span class="zh">Embrapa 的三項建議合起來，其實就是任何一台可信的農場端反應器的設計規格：菌株只能來自官方保存中心、生產單位必須登記以利追溯、生產須有合格技術人員監督。Embrapa 同時警告，這種做法會製造結構性不平等，因為大農場請得起那位專業人員，小農請不起。這是評審能對農場端裝置提出的最尖銳質疑，它需要的是回答，不是口號。</span></p>
+    <p><span class="en">Two further facts change the shape of the argument. First, no commercial precedent exists anywhere for on-farm production of an engineered microbe or a recombinant peptide. Brazil's movement is multiplication of wild-type strains only, and an engineered organism there would fall under biosafety law rather than the on-farm exemption. Second, and more usefully, Ginkgo's agricultural lead states that metabolites and peptides derived from engineered microbes face easier approval than the microbes themselves, because the organism does not enter the market. A device whose output is a protein rather than a live cell is arguing on the easier side of that line, provided it can show the cells stay in.</span><span class="zh">還有兩件事會改變論證的形狀。第一，全世界沒有任何「在農場生產工程菌或重組胜肽」的商業先例。巴西的運動只涉及野生型菌株的繁殖，而工程菌在當地會落入生物安全法規，不適用農場端豁免。第二，也更有用的是：Ginkgo 的農業負責人指出，工程菌衍生的代謝物與胜肽，其核准難度低於菌本身，因為生物體不進入市場。一台輸出蛋白質而非活細胞的裝置，站在這條界線比較容易的那一側，前提是它能證明細胞留在裡面。</span></p>
+    <p><span class="en">For Taiwan specifically, the Plant Variety and Plant Seed Act bars domestic promotion or sale of a transgenic plant without an approved field trial, with penalties of NT$1,000,000 to 5,000,000. No Taiwanese instrument specific to on-farm release of an engineered microbe was located. That absence is not permission, and it should be written as an open question rather than as a clear path.</span><span class="zh">就台灣而言，《植物品種及種苗法》規定，未經核准田間試驗不得在國內推廣或銷售基因轉殖植物，罰則為新臺幣 100 萬至 500 萬元。目前未找到專門針對「工程微生物於農場端釋出」的台灣法規。這個空白不等於許可，應該寫成一個尚未解決的問題，而不是一條清楚的路。</span></p>
+  </div>
+</div>
+</section>
+<section id="releaf">
+<div class="wrap">
+  <div class="sechint">08 · Positioning</div>
+  <h2><span class="en">Where ReLeaf sits, and what it may honestly claim</span><span class="zh">ReLeaf 站在哪裡，以及可以誠實主張什麼</span></h2>
+  <p class="lede"><span class="en">An earlier internal note placed ReLeaf against three tiers of competitor and argued the case on cost. Checked against the project's own record, most of that argument cannot be used. What is left is stronger.</span><span class="zh">先前的內部筆記把 ReLeaf 對上三個梯隊的競爭者，並以成本作為論證主軸。對照專案自身的紀錄檢查後，那個論證的大部分都不能用。剩下的那部分，反而更強。</span></p>
+
+  <figure>
+    <span class="fignum">Figure 14</span>
+    <div class="figtitle"><span class="en">Two axes that do not require a bill of materials</span><span class="zh">兩條不需要物料清單就能畫的軸</span></div>
+    <div class="figsub"><span class="en">Horizontal: how far the reactor sits from the place its product is used. Vertical: who has to agree before the machine makes something different.</span><span class="zh">橫軸：反應器離產物使用地點有多遠。縱軸：要讓這台機器改做別的東西，必須誰點頭。</span></div>
+    <div id="fig-matrix"></div>
+    <figcaption><span class="en">The earlier note used cost against operator skill. ReLeaf cannot plot itself on a cost axis, because it has no bill of materials, and its own brief forbids the words cheap, low-cost and affordable until it does. These two axes need no price. They are both architectural, and both are things the design already decides. The top right quadrant is close to empty, and the only other occupants are open-source laboratory hardware.</span><span class="zh">先前的筆記用的是「成本 × 操作門檻」。ReLeaf 無法把自己畫在成本軸上，因為沒有物料清單總價；而專案自己的 brief 也明文禁止在有總價之前使用「便宜、低成本、負擔得起」這些字。這兩條軸不需要價格，兩者都是架構層次的，而且都是設計已經決定好的事。右上象限幾乎是空的，唯一的其他住戶是開源實驗室硬體。</span></figcaption>
+  </figure>
+
+  <h3 style="margin-top:44px"><span class="en">Verification of the earlier note</span><span class="zh">先前筆記的查核</span></h3>
+  <div class="tablewrap">
+  <table>
+    <caption><span class="en">Table 5. Checked against WikiHomepage/PROJECT_BRIEF.md, the invariant explorer, the instrument datasets and the Bioreactor_UI record.</span><span class="zh">表 5。對照 WikiHomepage/PROJECT_BRIEF.md、不變量探索器、儀器資料集與 Bioreactor_UI 紀錄查核。</span></caption>
+    <thead><tr>
+      <th style="width:30%"><span class="en">Claim in the earlier note</span><span class="zh">先前筆記的主張</span></th>
+      <th style="width:14%"><span class="en">Verdict</span><span class="zh">判定</span></th>
+      <th><span class="en">Why</span><span class="zh">理由</span></th>
+    </tr></thead>
+    <tbody>
+      <tr><td><span class="en">Three tiers: equipment giants, hardware disruptors, cloud and AI platforms</span><span class="zh">三個梯隊：設備巨頭、硬體破壞者、雲端與 AI 平台</span></td>
+        <td><span class="tag t2">holds</span></td>
+        <td><span class="en">Real segmentation, but incomplete. It misses the component and intensification suppliers, who sell the physics rather than the vessel, and the capacity operators, who sell litres. Those two layers are where the growth is.</span><span class="zh">是真實的分層，但不完整。漏了「零組件與製程強化供應商」（賣的是物理而非槽體）以及「產能營運商」（賣的是公升數）。成長正好落在這兩層。</span></td></tr>
+      <tr><td><span class="en">Cost reduction of 95 % or more against pharma-grade equipment</span><span class="zh">相對藥廠級設備，成本降低 95% 以上</span></td>
+        <td><span class="tag bad">cannot use</span></td>
+        <td><span class="en">PROJECT_BRIEF.md: cost is a design target, not a result, and no page or pitch may use cheap, low-cost, affordable, or any per-unit price until a bill of materials exists. There is no BOM in the repository, and the business-plan cost thread holds one message and no numbers.</span><span class="zh">PROJECT_BRIEF.md 寫明：成本是設計目標而非成果，在物料清單存在之前，任何頁面或簡報都不得使用便宜、低成本、負擔得起或任何單位價格。倉庫裡沒有 BOM，商業計畫的成本討論串只有一則訊息、沒有數字。</span></td></tr>
+      <tr><td><span class="en">Farmers operate it with one touch, adding water and a carbon source</span><span class="zh">農民一鍵操作，只要加水與碳源</span></td>
+        <td><span class="tag bad">cannot use</span></td>
+        <td><span class="en">Stated as achieved. The project's own not-yet-true list includes no measured biological output, delivery stopping at a reservoir, an unchosen membrane cutoff and an unconfirmed contained-use classification.</span><span class="zh">這是寫成「已達成」。但專案自己的「尚未成立」清單包含：沒有量測到任何生物產出、輸送止於儲槽、膜孔徑尚未選定、封閉使用分類未獲確認。</span></td></tr>
+      <tr><td><span class="en">Agricultural waste such as rice straw as the carbon source</span><span class="zh">以稻稈等農業廢棄物作為碳源</span></td>
+        <td><span class="tag bad">not on record</span></td>
+        <td><span class="en">Nothing in the project uses straw. The chassis is <i>B. subtilis</i> 168 in defined medium. Asserting a feedstock the team has never run is the fastest way to lose a judging session.</span><span class="zh">專案中沒有任何地方使用稻稈。底盤是 <i>B. subtilis</i> 168，跑在定義培養基上。主張一個團隊從未跑過的原料，是最快輸掉評審場次的方法。</span></td></tr>
+      <tr><td><span class="en">A thousand 10 L reactors equal one 10,000 L tank</span><span class="zh">一千台 10 L 反應器等於一台 10,000 L 大槽</span></td>
+        <td><span class="tag warn">needs rewriting</span></td>
+        <td><span class="en">Not as stated. The project's own invariant model scales by holding wall shear and flux constant while power per volume does not scale, and that tension is left in deliberately. Say the network claim as resilience and proximity, not as equal output.</span><span class="zh">照原句不成立。專案自己的不變量模型是靠固定壁面剪切與通量來放大，而單位體積功率並不隨之縮放，這個張力是刻意保留的。把網絡的主張講成韌性與距離，不要講成等量產出。</span></td></tr>
+      <tr><td><span class="en">The Nespresso machine for sustainable agriculture</span><span class="zh">永續農業的雀巢膠囊機</span></td>
+        <td><span class="tag bad">reverses the thesis</span></td>
+        <td><span class="en">A capsule machine is a closed system whose owner decides what may be brewed. The project's one sentence is about permission. This metaphor argues for the opposite of the project.</span><span class="zh">膠囊機是一個封閉系統，由擁有者決定能沖什麼。專案的核心句講的是「許可」。這個比喻論證的正好是專案的反面。</span></td></tr>
+      <tr><td><span class="en">Cellular Agriculture Ltd and Capra as architectural comparators</span><span class="zh">以 Cellular Agriculture Ltd 與 Capra 作為架構對標</span></td>
+        <td><span class="tag t2">holds, and is well chosen</span></td>
+        <td><span class="en">Hollow fibre and biofilm are the two architectures that genuinely break the stirred-tank assumption. Capra's funding mix is the more useful lesson: about $5.75 M of equity against a $7.5 M HHS agreement and a DARPA programme. Unusual architectures get bought by governments before they get bought by markets.</span><span class="zh">中空纖維與生物膜，是真正打破攪拌槽前提的兩種架構。Capra 的資金結構是更有用的一課：約 575 萬美元股權，對上 750 萬美元的 HHS 協議與一項 DARPA 計畫。特殊架構往往先被政府買單，才被市場買單。</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="pull">
+    <p><span class="en">The axis that is available is not cost. It is permission, and it is dose. A dried spore sachet is ambient stable, needs no power and is a real competitor to this entire device. What a sachet cannot do is be turned up on Tuesday afternoon because Thursday looks hot. A sachet answers whether. A reactor answers how much.</span><span class="zh">可用的軸不是成本，是「許可」與「劑量」。乾燥孢子包常溫穩定、不需電力，而且是這整台裝置的真實競爭者。孢子包做不到的是：因為星期四看起來會很熱，所以星期二下午把量調上去。孢子包只能回答「有沒有」，反應器回答的是「多少」。</span></p>
+    <span class="who">ReLeaf project brief, the refusal that the shelf-life argument requires</span>
+  </div>
+
+  <h3 style="margin-top:44px"><span class="en">Seven claims of trend alignment, each with the industry number beside it</span><span class="zh">七個「走在趨勢上」的主張，每個都附上產業數字</span></h3>
+  <p class="body"><span class="en">These are the claims ReLeaf can make without a bill of materials, without a titre and without a field trial. Each one is a statement about architecture, and each one has an industry figure that makes it more than an assertion.</span><span class="zh">以下是 ReLeaf 在沒有物料清單、沒有效價、沒有田間試驗的情況下仍可主張的說法。每一條都是關於架構的陳述，而且每一條都有一個產業數字讓它不只是自說自話。</span></p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr>
+      <th style="width:26%"><span class="en">What ReLeaf built</span><span class="zh">ReLeaf 做了什麼</span></th>
+      <th style="width:32%"><span class="en">The industry number that makes it a trend</span><span class="zh">讓它成為趨勢的產業數字</span></th>
+      <th><span class="en">How to say it</span><span class="zh">怎麼講</span></th>
+    </tr></thead>
+    <tbody>
+      <tr><td><span class="en">Perfusion with full cell retention rather than batch harvest</span><span class="zh">全細胞截留的灌流，而非批次收穫</span></td>
+        <td><span class="en">42.3 % of facilities were evaluating upstream continuous or perfusion in 2026; only 11.4 % were not considering it, down from 34 % in 2016.</span><span class="zh">2026 年有 42.3% 的廠房正在評估上游連續式或灌流製程；完全不考慮的只剩 11.4%，2016 年是 34%。</span></td>
+        <td><span class="en">We did not choose an unusual mode. We chose the mode the industry is moving to, at a size where it is easy to study.</span><span class="zh">我們選的不是冷門模式，而是產業正在轉向的模式，只是在一個容易研究的尺寸上。</span></td></tr>
+      <tr><td><span class="en">A single-use membrane module instead of a vessel that is cleaned</span><span class="zh">拋棄式膜模組，而非需要清洗的槽體</span></td>
+        <td><span class="en">Use of single-use perfusion equipment doubled from 33.1 % to 65.8 % of facilities over the past decade.</span><span class="zh">過去十年，使用拋棄式灌流設備的廠房比例從 33.1% 倍增到 65.8%。</span></td>
+        <td><span class="en">The disposable flow path is not a shortcut around cleaning validation. It is the direction the validated industry took first.</span><span class="zh">拋棄式流路不是繞過清洗驗證的捷徑，而是已驗證的產業自己先走的方向。</span></td></tr>
+      <tr><td><span class="en">Scale out by module count with wall shear and flux held constant</span><span class="zh">以模組數量放大，同時固定壁面剪切與通量</span></td>
+        <td><span class="en">This is van Reis linear scale ultrafiltration, 1997, the published method. One of seventeen iGEM bioreactor projects publishes a scale-up transform.</span><span class="zh">這就是 van Reis 1997 年的線性放大超濾法，是已發表的方法。十七個 iGEM 生物反應器專案中，只有一個公開了放大轉換式。</span></td>
+        <td><span class="en">Our scale-up rule is somebody else's published method, and we say which similarity group we sacrifice. Power per volume does not scale, and we leave that in.</span><span class="zh">我們的放大規則是別人已發表的方法，而且我們說明放棄了哪一組相似性。單位體積功率不隨之縮放，這點我們保留在圖上。</span></td></tr>
+      <tr><td><span class="en">An in-line optical measurement instead of offline sampling</span><span class="zh">線上光學量測，而非離線取樣</span></td>
+        <td><span class="en">Adoption of bioreactor automation and control rose from about 10 % in 2011 to 38.6 % in 2026.</span><span class="zh">生物反應器自動化與控制的採用率，從 2011 年約 10% 上升到 2026 年的 38.6%。</span></td>
+        <td><span class="en">Over 434 hours our photometer's reference channel fell from 25.8 to 9.3 lux, and the scatter in the reading rose at exactly those hours. The instrument recorded when to distrust itself. That is the measurement claim, not the growth curve.</span><span class="zh">在 434 小時的紀錄中，光度計自身的參考通道從 25.8 lux 掉到 9.3 lux，而讀值的散布正好在那幾個小時放大。儀器記錄下了「什麼時候不該相信自己」。這才是量測主張，不是那條生長曲線。</span></td></tr>
+      <tr><td><span class="en">Light as the actuator, with brightness intended as dose</span><span class="zh">以光作為致動器，亮度即劑量（設計意圖）</span></td>
+        <td><span class="en">Model predictive control and soft sensing are where process analytical technology is heading. An optical setpoint is the cheapest possible manipulated variable.</span><span class="zh">模型預測控制與軟感測是製程分析技術的方向。光學設定點是最廉價的可操作變數。</span></td>
+        <td><span class="en">Design intent, not a measured result. No induction curve exists in our hands, and the 105 minute latency is borrowed from a different organism at a different wavelength.</span><span class="zh">這是設計意圖，不是量測結果。我們手上沒有誘導曲線，105 分鐘的延遲是借自不同生物、不同波長的文獻值。</span></td></tr>
+      <tr><td><span class="en">An operator interface a non-expert can read</span><span class="zh">非專家也讀得懂的操作介面</span></td>
+        <td><span class="en">Built on ISA-101 High Performance HMI, the standard behind Emerson DeltaV Live, which Thermo Fisher's TruBio runs on, and behind Biostat and BioFlo.</span><span class="zh">建立在 ISA-101 高效能人機介面標準之上，也就是 Emerson DeltaV Live（Thermo Fisher TruBio 執行其上）、Biostat 與 BioFlo 背後的同一套標準。</span></td>
+        <td><span class="en">We did not invent a friendly interface. We applied the same standard the pharmaceutical control rooms use, to an operator who is not a pharmacist.</span><span class="zh">我們沒有發明一個「親切的介面」，而是把藥廠控制室在用的同一套標準，套用在一個不是藥師的操作者身上。</span></td></tr>
+      <tr><td><span class="en">The expression cassette is a slot, not a rebuild</span><span class="zh">表現卡匣是一個插槽，不是重造</span></td>
+        <td><span class="en">Architecture, not scale, is where the cost is. Moving from a 210,000 L stirred tank to a 260,000 L airlift cut modelled cost of goods further than a fivefold increase in scale did.</span><span class="zh">成本落在架構，不在尺寸。從 210,000 L 攪拌槽換成 260,000 L 氣舉式槽，模型成本的下降幅度大於把尺寸放大五倍。</span></td>
+        <td><span class="en">The platform outlives the molecule. That is a platform claim, and platform claims are the ones this industry pays for.</span><span class="zh">平台比分子活得久。這是平台主張，而這個產業付錢買的正是平台主張。</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="grid2" style="margin-top:34px">
+    <div class="card on-warn">
+      <h3><span class="en">What still has to be said out loud</span><span class="zh">還是得說出口的事</span></h3>
+      <p><span class="en">Taiwan has never permitted domestic cultivation of genetically engineered crops, and engineered microbial preparations for plant protection sit under a separate trial regulation. A device that puts an engineered organism next to a field has to name that, in the same breath as the vision. Saying it first is stronger than being asked.</span><span class="zh">台灣從未允許基因改造作物的境內種植，而供植物保護用的遺傳工程微生物製劑另有開發試驗研究管理辦法。一台把工程菌放到田邊的裝置，必須在講願景的同一口氣裡把這件事講出來。自己先說，比被問到再說有力。</span></p>
+      <p><span class="en">Containment is cellular, not molecular. A 0.2 µm pore retains whole cells and passes 20 to 200 nm outer-membrane vesicles. And the membrane cutoff is still unchosen: 0.2 µm and 50 kDa are two different devices with opposite consequences, and only one of them makes "passes only protein" true.</span><span class="zh">圍阻是細胞層級，不是分子層級。0.2 µm 孔徑攔得住完整細胞，卻讓 20 至 200 nm 的外膜囊泡通過。而且膜的截留值仍未選定：0.2 µm 與 50 kDa 是兩台後果相反的裝置，只有其中一台能讓「只讓蛋白質通過」成立。</span></p>
+    </div>
+    <div class="card on-brand">
+      <h3><span class="en">The two experiments that change the tier</span><span class="zh">能改變層級的兩個實驗</span></h3>
+      <p><span class="en">Against the five-tier hardware ladder, ReLeaf is characterised but not measured. Every invariant quoted, the wall shear rate, the flux ratio against critical flux, the k<sub>L</sub>a, is a model output at the default sliders, not a measurement. Tier one needs performance that was measured rather than computed.</span><span class="zh">對照五層硬體階梯，ReLeaf 屬於「已特徵化、未量測」。所有引用的不變量，包括壁面剪切率、通量對臨界通量之比、k<sub>L</sub>a，都是預設滑桿下的模型輸出，不是量測值。第一層要的是量測而非計算出來的性能。</span></p>
+      <p><span class="en">A flux against transmembrane pressure sweep replaces the assumed critical flux. A gassing-out test replaces the assumed k<sub>L</sub>a. Two experiments, both cheap, both doable before the wiki freeze on 21 October 2026.</span><span class="zh">一次通量對跨膜壓的掃描，取代假設的臨界通量。一次 gassing-out 試驗，取代假設的 k<sub>L</sub>a。兩個實驗，都便宜，都能在 2026 年 10 月 21 日 wiki 凍結前做完。</span></p>
+    </div>
+  </div>
+</div>
+</section>
+<section id="writing" class="tint">
+<div class="wrap">
+  <div class="sechint">09 · Writing</div>
+  <h2><span class="en">What to put on the bioreactor page, and what to put on the homepage</span><span class="zh">生物反應器頁面要寫什麼，首頁又要放什麼</span></h2>
+  <p class="lede"><span class="en">The bioreactor page carries the argument. The homepage carries one sentence of it. They are not the same job, and the homepage sentence is the harder one.</span><span class="zh">生物反應器頁面承載整段論證，首頁只承載其中一句。這是兩件不同的工作，而首頁那一句比較難。</span></p>
+
+  <h3 style="margin-top:34px"><span class="en">The bioreactor page, in the order a judge reads it</span><span class="zh">生物反應器頁面，依評審閱讀順序</span></h3>
+  <ol class="body" style="padding-left:1.3em">
+    <li><span class="en"><b>Open on the industry, not on ourselves.</b> Fewer than one fermentation facility in five worldwide has a vessel above 20,000 L, and only nine have one above 100,000 L. The industry's shortage is of large vessels. Ours is a different shortage, and naming theirs first is what earns the right to name ours.</span><span class="zh"><b>從產業開場，不要從自己開場。</b>全世界不到五分之一的發酵廠有 20,000 L 以上的槽體，只有九座超過 100,000 L。產業缺的是大槽。我們缺的是另一種東西，而先講清楚他們缺什麼，才換得到講我們缺什麼的資格。</span></li>
+    <li><span class="en"><b>Then the architecture, with the reason it was chosen.</b> Perfusion with full cell retention, single-use module, scale out by module count. Cite van Reis for the scale-up rule and say which similarity group is sacrificed. Dr. Yuet recommended a packed bed and we still owe him a written justification for hollow fibre. Put that on the page. It reads as engineering, not as an oversight.</span><span class="zh"><b>再講架構，並且講為什麼選它。</b>全細胞截留的灌流、拋棄式模組、以模組數量橫向擴充。放大規則引用 van Reis，並說明放棄了哪一組相似性。Yuet 老師建議的是填充床，我們還欠他一份選擇中空纖維的書面理由。把這件事寫在頁面上。它讀起來是工程，不是疏漏。</span></li>
+    <li><span class="en"><b>Then the measurement, and the failure inside it.</b> 434 hours of unbroken logging. The scatter rose between 240 and 300 hours, and over exactly those hours the photometer's reference channel fell from 25.8 to 9.3 lux. The instrument recorded when to distrust itself. Lead with that, not with the growth curve.</span><span class="zh"><b>再講量測，以及量測裡的失效。</b>434 小時不間斷紀錄。散布在第 240 至 300 小時之間放大，而正好在那幾個小時，光度計的參考通道從 25.8 lux 掉到 9.3 lux。儀器記錄下了何時不該相信自己。用這件事開頭，不要用生長曲線。</span></li>
+    <li><span class="en"><b>Then the model, with its corrections visible.</b> The critical-flux particle radius was wrong at 1.5 µm and is right at 0.7 µm, and correcting it moved the fouling margin from 0.26 to 0.73. Showing a correction is worth more than showing a result.</span><span class="zh"><b>再講模型，並且讓修正可見。</b>臨界通量的粒徑取 1.5 µm 是錯的，正確值是 0.7 µm，修正後結垢餘裕從 0.26 移到 0.73。展示一次修正，比展示一個結果值錢。</span></li>
+    <li><span class="en"><b>Then the limits, at the same type size as the claims.</b> Every invariant is a model output. No biological output has been measured. Delivery stops at a reservoir. The membrane cutoff is unchosen. Contained use is a classification being pursued, not one held.</span><span class="zh"><b>再講限制，字級與主張相同。</b>所有不變量都是模型輸出。沒有量測到任何生物產出。輸送止於儲槽。膜截留值未選定。封閉使用是正在爭取的分類，不是已經持有的分類。</span></li>
+  </ol>
+
+  <h3 style="margin-top:40px"><span class="en">Homepage highlight, three candidates</span><span class="zh">首頁重點，三個候選</span></h3>
+  <div class="grid3">
+    <div class="card">
+      <span class="tag t3">A</span>
+      <h3 style="margin-top:10px"><span class="en">The empty quadrant</span><span class="zh">空的象限</span></h3>
+      <p><span class="en"><i>"Nine fermentation plants in the world have a vessel above 100,000 litres. None of them is within a kilometre of a field."</i></span><span class="zh"><i>「全世界有九座發酵廠擁有 10 萬公升以上的槽體。沒有任何一座在田的一公里之內。」</i></span></p>
+      <p><span class="en">Strongest on evidence. It uses an industry number rather than a claim about ourselves, and the second sentence does all the work without asserting anything we have not built.</span><span class="zh">證據面最強。用的是產業數字而不是關於自己的主張，而且第二句完成了全部工作，卻沒有主張任何我們尚未做出的東西。</span></p>
+    </div>
+    <div class="card on-brand">
+      <span class="tag t2">B · recommended</span>
+      <h3 style="margin-top:10px"><span class="en">Whether against how much</span><span class="zh">有沒有，對上多少</span></h3>
+      <p><span class="en"><i>"A sachet of spores answers whether. A reactor answers how much. Thursday looks hot, so we turn it up on Tuesday."</i></span><span class="zh"><i>「一包孢子只能回答有沒有。反應器回答的是多少。星期四看起來會很熱，所以我們星期二把量調上去。」</i></span></p>
+      <p><span class="en">This is the project's own refusal of its cheapest competitor, and it is the only framing that survives contact with the not-yet-true list. It claims a capability of the architecture, not a result of an experiment.</span><span class="zh">這是專案對自己最廉價競爭者的拒絕，也是唯一能在「尚未成立」清單前存活的框架。它主張的是架構的能力，不是實驗的結果。</span></p>
+    </div>
+    <div class="card">
+      <span class="tag t3">C</span>
+      <h3 style="margin-top:10px"><span class="en">Permission</span><span class="zh">許可</span></h3>
+      <p><span class="en"><i>"Nothing about the biology is proprietary. Everything between the fermenter and the field is."</i></span><span class="zh"><i>「生物學本身沒有一處是專利的。專利的是發酵槽與田之間的每一段。」</i></span></p>
+      <p><span class="en">The truest sentence the project owns, and the hardest to follow with a demonstration. Use it as the closing line of the bioreactor page rather than as the homepage hook.</span><span class="zh">專案擁有的最真實的一句，但也最難用展示接續。把它放在生物反應器頁面的結尾，而不是首頁的鉤子。</span></p>
+    </div>
+  </div>
+
+  <div class="grid2" style="margin-top:30px">
+    <div class="card on-bad">
+      <h3><span class="en">Delete before a judge sees it</span><span class="zh">評審看到之前先刪掉</span></h3>
+      <ul style="font-size:.92rem;color:var(--muted);padding-left:1.15em;margin:0">
+        <li><span class="en">Any percentage cost reduction, and the words cheap, low-cost, affordable</span><span class="zh">任何成本下降百分比，以及便宜、低成本、負擔得起這些字</span></li>
+        <li><span class="en">"Farmers just add water and a carbon source"</span><span class="zh">「農民只要加水和碳源」</span></li>
+        <li><span class="en">Rice straw or any agricultural waste as feedstock</span><span class="zh">稻稈或任何農業廢棄物作為原料</span></li>
+        <li><span class="en">AI climate prediction described as a working feature. Forecast lead time is not on record, and the prediction argument only closes if lead time exceeds end-to-end latency</span><span class="zh">把 AI 氣候預測寫成已運作的功能。預報前置時間沒有紀錄，而預測論證只有在前置時間大於端到端延遲時才成立</span></li>
+        <li><span class="en">"Zero cold chain" written as achieved rather than as an argument about architecture</span><span class="zh">把「零冷鏈」寫成已達成，而不是寫成關於架構的論證</span></li>
+        <li><span class="en">The Nespresso comparison, and the word democratising</span><span class="zh">雀巢膠囊機的比喻，以及「平民化」這個詞</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3><span class="en">House rules that apply to every line above</span><span class="zh">上述每一行都適用的規則</span></h3>
+      <p><span class="en">No em dashes. Sentence case headings. No delve, leverage, robust, seamless, comprehensive, empower, harness, revolutionise. Vary sentence length; fragments are allowed. State the limit immediately after the claim it limits, at the same type size. Never infer from silence: a missing fact is not on record, and you may not write its negation either.</span><span class="zh">不用破折號。標題用句子式大小寫。不用 delve、leverage、robust、seamless、comprehensive、empower、harness、revolutionise。句長要變化，允許不完整句。限制緊接在它所限制的主張之後，字級相同。不要從沉默推論：沒有的事實就是沒有紀錄，也不可以寫它的否定。</span></p>
+      <p><span class="en">And on images: cleanrooms, banks of white coats and expensive instrumentation argue that you need a facility for this. Hand-built and slightly messy frames argue the opposite, which is our argument.</span><span class="zh">關於影像：無塵室、成排的白袍與昂貴儀器，論證的是「你需要一座廠房才能做這件事」。手工做的、有點雜亂的畫面論證的是相反的事，而那才是我們的論證。</span></p>
+    </div>
+  </div>
+</div>
+</section>
+<section id="method" class="tint">
+<div class="wrap">
+  <div class="sechint">Method</div>
+  <h2><span class="en">How this was built, and what it cannot tell you</span><span class="zh">這份報告怎麼做出來的，以及它無法告訴你什麼</span></h2>
+  <div class="grid2">
+    <div class="card">
+      <h3><span class="en">Source hierarchy</span><span class="zh">來源層級</span></h3>
+      <p><span class="en">Load-bearing claims come from company filings and investor releases, peer-reviewed papers, regulator and government documents, and named industry surveys. Commercial market-report landing pages are used only for market sizing, and always as a range with the publisher named, because none of them discloses a methodology.</span><span class="zh">承重的主張來自公司財報與投資人公告、同儕審查論文、監管機關與政府文件，以及具名的產業調查。商業市調報告頁面只用於市場規模，且一律以區間呈現並註明出版者，因為它們都沒有揭露方法論。</span></p>
+      <p><span class="en">Vendor performance claims are labelled as vendor claims wherever they appear. Sponsored content is named as sponsored.</span><span class="zh">廠商的效能主張，在出現的每一處都標示為廠商說法。贊助內容一律註明為贊助。</span></p>
+    </div>
+    <div class="card on-warn">
+      <h3><span class="en">Deliberately excluded</span><span class="zh">刻意排除</span></h3>
+      <p><span class="en">Three aggregator sites that repeatedly produced confident dollar-per-litre figures with no traceable provenance. A widely repeated claim of about 25 million litres of global precision fermentation capacity, which could not be found in any Synonym or GFI primary document. An assertion that single-use is 98 % of capacity by volume, which contradicts the peer-reviewed figure of about 13 %. A reported buyout offer for LanzaTech that does not appear in the filings.</span><span class="zh">三個反覆給出看似明確、卻無法追溯來源的每公升價格的聚合網站。一則流傳甚廣、稱全球精準發酵產能約 2,500 萬公升的說法，在 Synonym 或 GFI 的一手文件中都找不到。一項稱拋棄式占體積產能 98% 的主張，與同儕審查的約 13% 相矛盾。一則 LanzaTech 收購報價的傳聞，在申報文件中並不存在。</span></p>
+    </div>
+    <div class="card on-bad">
+      <h3><span class="en">Known holes</span><span class="zh">已知的洞</span></h3>
+      <p><span class="en">Current capacity utilisation percentages sit behind a paywall; the only fully specified figures found are from 2012. Single-use share of new capacity by installed litres is not published cleanly anywhere. New-unit list prices for Ambr, BioFlo and Biostat are quote-only. No defensible ceiling for what a farmer will pay per hectare was found. No published cost per kilogram compares photobioreactor and open-pond cyanobacterial biomass for agriculture. Several private companies publish no financials at all.</span><span class="zh">目前的產能利用率數字位於付費牆之後；唯一能完整取得的規格化數字來自 2012 年。以裝機公升數計的拋棄式新產能占比，任何地方都沒有乾淨的公開資料。Ambr、BioFlo 與 Biostat 的新機定價一律報價制。找不到「農民每公頃願付上限」的可靠數字。沒有比較光生物反應器與開放池培養藍綠菌生質、用於農業的每公斤成本文獻。數家私人公司完全不公布財務數字。</span></p>
+    </div>
+    <div class="card">
+      <h3><span class="en">Dates and currency</span><span class="zh">日期與幣別</span></h3>
+      <p><span class="en">Research was carried out on 3 September 2026 and every status was checked against that date. Several companies in section 05 have press releases that read as current but are a year or more stale, and those are flagged individually. Currencies are as reported, not converted.</span><span class="zh">研究於 2026 年 9 月 3 日進行，所有狀態均以該日期查核。第 05 節有數家公司的新聞稿讀起來像是最新，實際上已停滯一年以上，個別標註。幣別依原始揭露，未做換算。</span></p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:40px"><span class="en">Principal sources</span><span class="zh">主要來源</span></h3>
+  <div class="grid2">
+    <ol class="refs">
+      <li>Sartorius AG, preliminary results FY2023, FY2024, FY2025 and half-year results H1 2026.</li>
+      <li>Sartorius Stedim Biotech, preliminary results FY2025.</li>
+      <li>Danaher, Q4 and FY2025 results; Danaher overview presentation 2024.</li>
+      <li>Thermo Fisher Scientific, Q4 and FY2025 results; Form 8-K FY2025.</li>
+      <li>Merck KGaA, annual report 2024 and 2025, Life Science section.</li>
+      <li>Eppendorf SE, annual report 2025.</li>
+      <li>Getinge, annual report 2025 and Q4 2025 presentation.</li>
+      <li>Repligen, FY2025 and Q2 2026 results; BioLife Solutions announcement, 22 July 2026.</li>
+      <li>Donaldson Company, Form 10-K for the year ended 31 July 2025.</li>
+      <li>WuXi Biologics, FY2025 and H1 2026 results.</li>
+      <li>BioPlan Associates, 22nd and 23rd Annual Report and Survey of Biopharmaceutical Manufacturing, via Pharma Manufacturing and Contract Pharma.</li>
+      <li>BioProcess Technology Group bioTRAK, via BioProcess International and the CPhI Annual Report.</li>
+      <li>Synonym, Blue Horizon, GFI and Material Innovation Initiative, State of Global Fermentation Capacity.</li>
+      <li>Good Food Institute, State of the Industry reports on fermentation and on cultivated meat, 2025 and 2026.</li>
+    </ol>
+    <ol class="refs" start="15">
+      <li>Negulescu et al., Techno-economic modeling of cultivated meat, Biotechnology and Bioengineering 2023, doi:10.1002/bit.28324.</li>
+      <li>Humbird, Scale-up economics for cultured meat, Biotechnology and Bioengineering 2021, doi:10.1002/bit.27848.</li>
+      <li>Lever VC, Scale-up Costs of Precision Fermentation.</li>
+      <li>Reiners et al., Revisiting the Carbon Footprint of Single-Use Technologies in Biomanufacturing, Biotechnology and Bioengineering 2026, doi:10.1002/bit.70297.</li>
+      <li>Frontiers in Sustainability 2025, doi:10.3389/frsus.2025.1536382.</li>
+      <li>Xu et al., doi:10.1186/s40643-020-00304-y; Olin et al., doi:10.1002/btpr.3410; Processes 2024, doi:10.3390/pr12040806.</li>
+      <li>Rittershaus et al., Bioengineering 2022, PMC9029935; Rafferty et al., doi:10.1002/btpr.2977; Graf et al., doi:10.3389/fbioe.2022.719614.</li>
+      <li>ICH Q13, Continuous Manufacturing of Drug Substances and Drug Products, step 4, 16 November 2022.</li>
+      <li>US FDA, PAT framework guidance 2004; draft guidance on artificial intelligence, January 2025; CDER FRAME initiative pages; AMT report to Congress CY2025.</li>
+      <li>NSCEB, Charting the Future of Biotechnology, 8 April 2025, and CSIS analysis.</li>
+      <li>European Commission, Biotech Act proposal COM(2025) 1022, 16 December 2025.</li>
+      <li>BioMADE facility announcements; Luanpitpong et al., Molecular Therapy Oncology 2024, PMC11539415.</li>
+      <li>Steel et al., PLOS Biology 2020, doi:10.1371/journal.pbio.3000794; Wong et al., Nature Biotechnology 2018, doi:10.1038/nbt.4151; Pioreactor product pages; Open Bioeconomy Lab.</li>
+      <li>Bocatti et al., Brazilian Journal of Microbiology 2022, doi:10.1007/s42770-021-00649-2; Embrapa technical note on on-farm production; Lei 15.070/2024 analyses.</li>
+      <li>Frontiers in Sustainable Food Systems 2025, doi:10.3389/fsufs.2025.1657000; PMC5812248 on drying survival.</li>
+      <li>Taiwan Plant Variety and Plant Seed Act, articles 3, 52 and 54.</li>
+    </ol>
+  </div>
+</div>
+</section>
+
+<footer class="foot"><div class="wrap">
+  <h3><span class="en">The bioreactor industry in 2026</span><span class="zh">2026 年的生物反應器產業</span></h3>
+  <p><span class="en">An industry report prepared for GEMS Taiwan, iGEM 2026, project ReLeaf. Research carried out 3 September 2026. Text and figures are released under CC BY 4.0; the underlying publications carry their own terms.</span><span class="zh">為 GEMS Taiwan、iGEM 2026、ReLeaf 專案製作的產業報告。研究執行日期為 2026 年 9 月 3 日。內文與圖表以 CC BY 4.0 釋出；引用的原始出版品各有其授權條款。</span></p>
+  <p><span class="en">Companion pages: the <a href="https://timmy97-tw.github.io/igem-bioreactor-landscape/">iGEM bioreactor landscape</a>, a competitive audit of seventeen student projects, and the <a href="https://timmy97-tw.github.io/releaf-invariant-explorer/">bioreactor invariant explorer</a>, the scale-up model behind the design.</span><span class="zh">相關頁面：<a href="https://timmy97-tw.github.io/igem-bioreactor-landscape/">iGEM 生物反應器地景</a>，十七個學生專案的競爭稽核；以及<a href="https://timmy97-tw.github.io/releaf-invariant-explorer/">生物反應器不變量探索器</a>，設計背後的放大模型。</span></p>
+  <p style="margin:0"><span class="src">No number on this page was written from memory. Where a figure could not be traced to a document, it was left out.</span></p>
+</div></footer>
+<script>
+/* ReLeaf · Bioreactor Industry Report · figure renderers
+   Every figure is drawn from a data literal so the numbers stay auditable
+   in one place. SVG only, no dependencies, light mode. */
+(function(){
+const NS='http://www.w3.org/2000/svg';
+const C={ink:'#22261f',muted:'#5c6259',neutral:'#7d837a',rule:'#e2e5dd',rule2:'#c3c8bb',
+  brand:'#66c902',brandDeep:'#4eaf02',accent:'#2f6b26',sky:'#2f6f9e',skyDeep:'#1d4f75',
+  warn:'#9a5b12',bad:'#96302a',plum:'#6b3f7a',sand:'#8a7434',paper2:'#f4f5f1',paper3:'#eceee7',white:'#fff'};
+const PAL=[C.accent,C.sky,C.warn,C.plum,C.sand,C.bad,C.brandDeep,C.neutral];
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const fmt=(n,d)=>{d=(d===undefined)?0:d;return n.toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});};
+function svg(w,h,body,cls){return `<svg viewBox="0 0 ${w} ${h}" width="100%" role="img" class="fig ${cls||''}" preserveAspectRatio="xMidYMid meet" font-family="Inter,system-ui,sans-serif">${body}</svg>`;}
+function txt(x,y,s,o){o=o||{};return `<text x="${x}" y="${y}" fill="${o.fill||C.muted}" font-size="${o.size||11}" font-weight="${o.weight||400}" text-anchor="${o.anchor||'start'}" font-family="${o.mono?'Geist Mono,ui-monospace,Menlo,monospace':'inherit'}" ${o.ls?`letter-spacing="${o.ls}"`:''} ${o.op?`opacity="${o.op}"`:''}>${esc(s)}</text>`;}
+function line(x1,y1,x2,y2,o){o=o||{};return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${o.stroke||C.rule}" stroke-width="${o.w||1}" ${o.dash?`stroke-dasharray="${o.dash}"`:''} ${o.cap?`stroke-linecap="${o.cap}"`:''}/>`;}
+function rect(x,y,w,h,o){o=o||{};return `<rect x="${x}" y="${y}" width="${Math.max(0,w)}" height="${Math.max(0,h)}" fill="${o.fill||C.brand}" ${o.r?`rx="${o.r}"`:''} ${o.stroke?`stroke="${o.stroke}" stroke-width="${o.sw||1}"`:''} ${o.op?`opacity="${o.op}"`:''}/>`;}
+
+/* ── horizontal bars, optional range whisker ─────────────── */
+window.hbar=function(d,o){
+  o=o||{}; const W=o.w||760, labW=o.labW||190, valW=o.valW||96, rowH=o.rowH||30, pad=o.pad||14;
+  const H=pad*2+d.length*rowH+(o.axis?22:0);
+  const max=o.max||Math.max(...d.map(r=>Math.max(r.v,r.hi||0)))*1.02;
+  const x0=labW, plotW=W-labW-valW;
+  let s='';
+  if(o.gridAt) o.gridAt.forEach(g=>{const gx=x0+plotW*g/max; s+=line(gx,pad-4,gx,H-pad-(o.axis?18:0),{stroke:C.rule,dash:'2 3'});
+    s+=txt(gx,H-pad-(o.axis?6:-8),o.gridFmt?o.gridFmt(g):fmt(g),{size:9.5,anchor:'middle',fill:C.neutral,mono:1});});
+  d.forEach((r,i)=>{
+    const y=pad+i*rowH, cy=y+rowH/2, bh=o.bh||13, by=cy-bh/2;
+    s+=txt(labW-10,cy+4,r.k,{anchor:'end',size:11.5,fill:r.hi2?C.ink:C.muted,weight:r.em?650:400});
+    if(r.lo!==undefined&&r.hi!==undefined){
+      s+=line(x0+plotW*r.lo/max,cy,x0+plotW*r.hi/max,cy,{stroke:C.rule2,w:5,cap:'round'});
+    }
+    s+=rect(x0,by,plotW*r.v/max,bh,{fill:r.c||(r.em?C.accent:C.brand),r:2});
+    s+=txt(W-8,cy+4,r.lab!==undefined?r.lab:fmt(r.v,o.dp),{anchor:'end',size:11,fill:C.ink,mono:1,weight:r.em?650:400});
+  });
+  return svg(W,H,s);
+};
+
+/* ── grouped vertical bars over categories ───────────────── */
+window.gbar=function(cats,series,o){
+  o=o||{}; const W=o.w||760,H=o.h||300,L=o.L||48,R=14,T=o.T||24,B=o.B||44;
+  const max=o.max||Math.max(...series.flatMap(s=>s.v))*1.1;
+  const pw=(W-L-R)/cats.length, gw=pw*0.72, bw=gw/series.length;
+  let s='';
+  const ticks=o.ticks||4;
+  for(let i=0;i<=ticks;i++){const v=max*i/ticks,y=H-B-(H-B-T)*i/ticks;
+    s+=line(L,y,W-R,y,{stroke:i?C.rule:C.rule2});
+    s+=txt(L-8,y+3.5,o.yfmt?o.yfmt(v):fmt(v),{anchor:'end',size:9.5,mono:1,fill:C.neutral});}
+  cats.forEach((c,i)=>{
+    const gx=L+pw*i+(pw-gw)/2;
+    series.forEach((se,j)=>{const v=se.v[i]; if(v===null||v===undefined)return;
+      const h=(H-B-T)*v/max; s+=rect(gx+bw*j,H-B-h,bw-2,h,{fill:se.c||PAL[j],r:1.5});});
+    s+=txt(L+pw*i+pw/2,H-B+16,c,{anchor:'middle',size:10.5,fill:C.muted});});
+  if(o.legend!==false){let lx=L; series.forEach((se,j)=>{
+      s+=rect(lx,T-18,9,9,{fill:se.c||PAL[j],r:1.5});
+      s+=txt(lx+13,T-10,se.k,{size:10.5,fill:C.muted}); lx+=se.k.length*6.1+30;});}
+  if(o.ylab) s+=txt(12,T-8,o.ylab,{size:9.5,mono:1,fill:C.neutral,ls:'.06em'});
+  return svg(W,H,s);
+};
+
+/* ── multi-series line chart ─────────────────────────────── */
+window.lines=function(xs,series,o){
+  o=o||{}; const W=o.w||760,H=o.h||320,L=o.L||52,R=o.R||96,T=o.T||26,B=44;
+  const vals=series.flatMap(s=>s.v.filter(v=>v!==null&&v!==undefined));
+  const max=o.max!==undefined?o.max:Math.max(...vals)*1.08, min=o.min!==undefined?o.min:0;
+  const X=i=>L+(W-L-R)*i/(xs.length-1), Y=v=>H-B-(H-B-T)*(v-min)/(max-min);
+  let s='';
+  const ticks=o.ticks||4;
+  for(let i=0;i<=ticks;i++){const v=min+(max-min)*i/ticks,y=Y(v);
+    s+=line(L,y,W-R,y,{stroke:i?C.rule:C.rule2});
+    s+=txt(L-8,y+3.5,o.yfmt?o.yfmt(v):fmt(v),{anchor:'end',size:9.5,mono:1,fill:C.neutral});}
+  if(o.mark) o.mark.forEach(m=>{const mx=X(m.i);
+    s+=line(mx,T-6,mx,H-B,{stroke:C.rule2,dash:'3 3'});
+    s+=txt(mx+4,T+2,m.k,{size:9.5,fill:C.neutral,mono:1});});
+  if(o.base!==undefined) s+=line(L,Y(o.base),W-R,Y(o.base),{stroke:C.rule2,dash:'4 3'});
+  xs.forEach((x,i)=>{ if(o.everyX&&i%o.everyX)return;
+    s+=txt(X(i),H-B+16,x,{anchor:'middle',size:10,fill:C.muted});});
+  series.forEach((se,j)=>{
+    const pts=se.v.map((v,i)=>v==null?null:[X(i),Y(v)]).filter(Boolean);
+    const dd=pts.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' ');
+    const col=se.c||PAL[j];
+    if(se.area) s+=`<path d="${dd} L ${pts[pts.length-1][0]} ${Y(min)} L ${pts[0][0]} ${Y(min)} Z" fill="${col}" opacity=".08"/>`;
+    s+=`<path d="${dd}" fill="none" stroke="${col}" stroke-width="${se.w||2}" stroke-linejoin="round" stroke-linecap="round" ${se.dash?`stroke-dasharray="${se.dash}"`:''}/>`;
+    if(se.dot!==false) pts.forEach(p=>{s+=`<circle cx="${p[0]}" cy="${p[1]}" r="2.6" fill="${C.white}" stroke="${col}" stroke-width="1.6"/>`;});
+    const last=pts[pts.length-1];
+    s+=txt(last[0]+9,last[1]+4,se.k,{size:10.5,fill:col,weight:600});
+  });
+  if(o.ylab) s+=txt(12,T-10,o.ylab,{size:9.5,mono:1,fill:C.neutral,ls:'.06em'});
+  return svg(W,H,s);
+};
+
+/* ── 2x2 positioning scatter ─────────────────────────────── */
+window.matrix=function(pts,o){
+  o=o||{}; const W=o.w||760,H=o.h||520,L=92,R=28,T=34,B=64;
+  const X=v=>L+(W-L-R)*v/100, Y=v=>H-B-(H-B-T)*v/100;
+  let s='';
+  s+=rect(L,T,W-L-R,H-B-T,{fill:C.paper2,r:4});
+  if(o.quad) o.quad.forEach(q=>{
+    s+=rect(X(q.x0),Y(q.y1),X(q.x1)-X(q.x0),Y(q.y0)-Y(q.y1),{fill:q.c,op:q.op||.5,r:3});
+    if(q.k){ const br=q.at==='br';
+      s+=txt(br?X(q.x1)-12:X(q.x0)+10, br?Y(q.y0)-12:Y(q.y1)+18, q.k,
+             {size:10,mono:1,fill:C.neutral,ls:'.08em',anchor:br?'end':'start'});}});
+  s+=line(X(50),T,X(50),H-B,{stroke:C.rule2,dash:'4 4'});
+  s+=line(L,Y(50),W-R,Y(50),{stroke:C.rule2,dash:'4 4'});
+  s+=line(L,H-B,W-R,H-B,{stroke:C.rule2}); s+=line(L,T,L,H-B,{stroke:C.rule2});
+  pts.forEach(p=>{
+    const x=X(p.x),y=Y(p.y),r=p.r||6;
+    if(p.halo) s+=`<circle cx="${x}" cy="${y}" r="${r+7}" fill="${p.c||C.brand}" opacity=".16"/>`;
+    s+=`<circle cx="${x}" cy="${y}" r="${r}" fill="${p.c||C.sky}" stroke="${C.white}" stroke-width="1.6"/>`;
+    const ax=p.lx||0, ay=p.ly||-12;
+    s+=txt(x+ax,y+ay,p.k,{size:p.em?12:10.8,anchor:p.anchor||'middle',fill:p.em?C.ink:C.muted,weight:p.em?650:500});
+    if(p.k2) s+=txt(x+ax,y+ay+12,p.k2,{size:9.5,anchor:p.anchor||'middle',fill:C.neutral});
+  });
+  s+=txt((L+W-R)/2,H-18,o.xlab||'',{anchor:'middle',size:10.5,fill:C.muted,weight:600});
+  s+=txt(-(T+H-B)/2,20,o.ylab||'',{anchor:'middle',size:10.5,fill:C.muted,weight:600});
+  s=s.replace(/<text x="-([\d.]+)" y="20"/, '<text transform="rotate(-90)" x="-$1" y="20"');
+  s+=txt(L,H-36,o.xlo||'',{size:9.5,mono:1,fill:C.neutral});
+  s+=txt(W-R,H-36,o.xhi||'',{size:9.5,mono:1,fill:C.neutral,anchor:'end'});
+  return svg(W,H,s);
+};
+
+/* ── stacked horizontal composition ──────────────────────── */
+window.stack=function(rows,keys,o){
+  o=o||{}; const W=o.w||760,labW=o.labW||150,rowH=o.rowH||34,pad=14;
+  const H=pad*2+rows.length*rowH+26;
+  let s='';
+  rows.forEach((r,i)=>{
+    const y=pad+i*rowH+20, tot=keys.reduce((a,k)=>a+(r[k.k]||0),0);
+    s+=txt(labW-10,y+12,r.name,{anchor:'end',size:11.5,fill:C.ink,weight:r.em?650:400});
+    let x=labW;
+    keys.forEach((k,j)=>{const v=r[k.k]||0, w=(W-labW-8)*v/(o.total||tot);
+      if(w>0){s+=rect(x,y,w-1,17,{fill:k.c||PAL[j],r:1.5});
+        if(w>34) s+=txt(x+w/2,y+12,o.cellfmt?o.cellfmt(v):fmt(v),{anchor:'middle',size:9.5,fill:C.white,mono:1,weight:600});}
+      x+=w;});
+  });
+  let lx=labW;
+  keys.forEach((k,j)=>{s+=rect(lx,pad,9,9,{fill:k.c||PAL[j],r:1.5});
+    s+=txt(lx+13,pad+8,k.k2||k.k,{size:10.5,fill:C.muted}); lx+=(k.k2||k.k).length*6.1+30;});
+  return svg(W,H,s);
+};
+
+/* ── event timeline ──────────────────────────────────────── */
+window.timeline=function(ev,o){
+  o=o||{}; const W=o.w||760, lanes=o.lanes||[], laneH=o.laneH||86, T=54;
+  const H=T+lanes.length*laneH+26, L=126, R=26;
+  const ink=o.dark?'#f1f4ee':C.ink, sub=o.dark?'#b4beb0':C.neutral,
+        rule=o.dark?'#2b3f3e':C.rule, rule2=o.dark?'#3b514f':C.rule2, ring=o.dark?'#152b2b':'#fff';
+  const y0=o.y0, y1=o.y1, X=y=>L+(W-L-R)*(y-y0)/(y1-y0);
+  let s='';
+  for(let y=Math.ceil(y0);y<=y1;y++){s+=line(X(y),T-18,X(y),H-22,{stroke:rule});
+    s+=txt(X(y),T-24,y,{anchor:'middle',size:10,mono:1,fill:sub});}
+  lanes.forEach((ln,i)=>{
+    const ly=T+i*laneH+laneH/2;
+    s+=txt(L-14,ly+4,ln.k,{anchor:'end',size:11,fill:ink,weight:600});
+    s+=line(L,ly,W-R,ly,{stroke:rule2,dash:'1 4'});
+  });
+  ev.forEach(e=>{
+    const ly=T+e.lane*laneH+laneH/2, x=X(e.t), dy=(e.dy!==undefined)?e.dy:22;
+    const up=dy<0, ax=x+(e.dx||0), an=e.anchor||'middle';
+    s+=line(x,ly,ax,ly+dy-(up?-3:3),{stroke:rule2});
+    s+=`<circle cx="${x}" cy="${ly}" r="5" fill="${e.c||C.brand}" stroke="${ring}" stroke-width="1.5"/>`;
+    if(up && e.k2) s+=txt(ax,ly+dy-11,e.k2,{anchor:an,size:9,fill:sub});
+    s+=txt(ax,ly+dy,e.k,{anchor:an,size:10.5,fill:ink,weight:600});
+    if(!up && e.k2) s+=txt(ax,ly+dy+11,e.k2,{anchor:an,size:9,fill:sub});
+  });
+  return svg(W,H,s);
+};
+
+/* ── slope / dumbbell comparison ─────────────────────────── */
+window.dumbbell=function(d,o){
+  o=o||{}; const W=o.w||760,labW=o.labW||210,rowH=o.rowH||30,pad=22,R=110;
+  const H=pad*2+d.length*rowH+16;
+  const max=o.max||Math.max(...d.flatMap(r=>[r.a,r.b]))*1.05;
+  const X=v=>labW+(W-labW-R)*v/max;
+  let s='';
+  (o.gridAt||[]).forEach(g=>{s+=line(X(g),pad-8,X(g),H-pad,{stroke:C.rule,dash:'2 3'});
+    s+=txt(X(g),pad-12,o.gridFmt?o.gridFmt(g):fmt(g),{anchor:'middle',size:9.5,mono:1,fill:C.neutral});});
+  d.forEach((r,i)=>{const y=pad+i*rowH+rowH/2;
+    s+=txt(labW-12,y+4,r.k,{anchor:'end',size:11.5,fill:C.ink});
+    s+=line(X(r.a),y,X(r.b),y,{stroke:C.rule2,w:2.5,cap:'round'});
+    s+=`<circle cx="${X(r.a)}" cy="${y}" r="5" fill="${C.white}" stroke="${o.ca||C.neutral}" stroke-width="2"/>`;
+    s+=`<circle cx="${X(r.b)}" cy="${y}" r="5.5" fill="${o.cb||C.accent}"/>`;
+    s+=txt(W-8,y+4,r.lab||'',{anchor:'end',size:10.5,mono:1,fill:C.muted});});
+  if(o.legend){s+=`<circle cx="${labW+6}" cy="${H-4}" r="4.5" fill="${C.white}" stroke="${o.ca||C.neutral}" stroke-width="2"/>`;
+    s+=txt(labW+16,H,o.legend[0],{size:10,fill:C.muted});
+    s+=`<circle cx="${labW+110}" cy="${H-4}" r="5" fill="${o.cb||C.accent}"/>`;
+    s+=txt(labW+120,H,o.legend[1],{size:10,fill:C.muted});}
+  return svg(W,H+10,s);
+};
+window.CHARTC=C;
+})();
+
+</script>
+<script>
+/* ── language ─────────────────────────────────────────────── */
+function setLang(l){
+  document.documentElement.setAttribute('data-lang',l);
+  document.documentElement.lang = (l==='zh')?'zh-Hant':'en';
+  document.getElementById('btn-en').setAttribute('aria-pressed', l==='en');
+  document.getElementById('btn-zh').setAttribute('aria-pressed', l==='zh');
+  try{localStorage.setItem('br-lang',l)}catch(e){}
+  draw();
+}
+var _boot=null; try{_boot=localStorage.getItem('br-lang');}catch(e){}
+const ZH=()=>document.documentElement.getAttribute('data-lang')==='zh';
+const T=(en,zh)=>ZH()?zh:en;
+
+/* ── nav highlighting ─────────────────────────────────────── */
+const links=[...document.querySelectorAll('nav.toc a')];
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){
+  links.forEach(a=>a.classList.toggle('on', a.getAttribute('href')==='#'+e.target.id));}})},
+  {rootMargin:'-45% 0px -50% 0px'});
+document.querySelectorAll('section[id]').forEach(s=>obs.observe(s));
+
+/* ── figures ──────────────────────────────────────────────── */
+const C=window.CHARTC;
+function put(id,html){const el=document.getElementById(id); if(el) el.innerHTML=html;}
+
+function draw(){
+/* Fig 01 · market size estimate spread */
+put('fig-spread', hbar([
+  {k:'Mordor Intelligence (2026)',            v:6.09, lab:'6.09'},
+  {k:'Credence Research (2025)',              v:8.85, lab:'8.85'},
+  {k:'Precision Business Insights (2025)',    v:13.0, lab:'13.0'},
+  {k:'Precedence Research (2025)',            v:13.27,lab:'13.27'},
+  {k:'Global Market Insights (2025)',         v:13.8, lab:'13.8'},
+  {k:'Research and Markets (2026)',           v:13.83,lab:'13.83'},
+  {k:T('Roots Analysis, bioreactors (2024)','Roots Analysis，生物反應器 (2024)'), v:16.7, lab:'16.7'},
+  {k:T('Roots Analysis, + fermenters (2024)','Roots Analysis，含發酵槽 (2024)'),  v:25.9, lab:'25.9', c:C.sky},
+  {k:T('InsightAce, + fermenters (2025)','InsightAce，含發酵槽 (2025)'),          v:26.1, lab:'26.1', c:C.sky},
+], {labW:250, valW:64, gridAt:[0,5,10,15,20,25], gridFmt:g=>'$'+g+'bn', axis:1, rowH:31}));
+
+/* Fig 02 · mammalian capacity vs demand */
+put('fig-capacity', lines(
+  ['2018','2020','2022','2023','2025','2027'],
+  [{k:T('Installed capacity','已裝機產能'), c:C.sky,   v:[4400,5200,null,6500,7500,8400], area:1},
+   {k:T('Demand','需求'),                   c:C.warn,  v:[2500,null,2500,null,4200,4400]}],
+  {h:300,R:130,max:9500,yfmt:v=>Math.round(v/1000)+'k',ylab:T('thousand litres','千公升')}));
+
+/* Fig 03 · fermentation facilities by largest vessel */
+put('fig-vessels', hbar([
+  {k:'100,000 L +',          v:9,  lab:'9',  c:C.bad,  em:1},
+  {k:'20,000 – 99,999 L',    v:20, lab:'20', c:C.warn, em:1},
+  {k:'2,000 – 19,999 L',     v:48, lab:'48', c:C.sand},
+  {k:'100 – 1,999 L',        v:91, lab:'91', c:C.accent},
+  {k:'10 – 99 L',            v:86, lab:'86', c:C.brandDeep},
+], {labW:170, valW:58, gridAt:[0,25,50,75,100], axis:1, rowH:34, bh:16}));
+
+/* Fig 04 · capital cost per litre */
+put('fig-costladder', hbar([
+  {k:T('2,000 L single-use system','2,000 L 拋棄式系統'),   v:125, lab:'$125 / L'},
+  {k:T('20,000 L vessel (Humbird)','20,000 L 槽體，Humbird'), v:75,  lab:'$75 / L'},
+  {k:T('20,000 L vessel (Risner)','20,000 L 槽體，Risner'),   v:50,  lab:'$50 / L'},
+  {k:T('200,000 L stainless vessel','200,000 L 不鏽鋼槽'),   v:8.5, lab:'$8.50 / L', c:C.accent, em:1},
+  {k:T('All-in installed, 1.2 M L plant','整廠攤提，120 萬公升'), v:106, lab:'$106 / L', c:C.sky},
+], {labW:250, valW:92, gridAt:[0,50,100], gridFmt:g=>'$'+g, axis:1, rowH:33}));
+
+/* Fig 09 · what they were funded to build vs what they sell */
+put('fig-pivot', stack([
+  {name:'Pow.bio',                 a:100, b:0},
+  {name:'Planetary Group',         a:100, b:0},
+  {name:'Cauldron Ferm',           a:100, b:0},
+  {name:'Capra Biosciences',       a:100, b:0},
+  {name:'Culture Biosciences',     a:60,  b:40},
+  {name:'The Cultivated B',        a:50,  b:50},
+  {name:'Liberation Bioindustries',a:100, b:0},
+  {name:'Ark Biotech',             a:0,   b:100, em:1},
+  {name:'Synonym → Roebling',      a:0,   b:100, em:1},
+], [{k:'a',k2:T('hardware / capacity is the product','硬體或產能就是產品'),c:C.accent},
+    {k:'b',k2:T('software is the product','軟體才是產品'),c:C.plum}],
+  {total:100, labW:190, cellfmt:()=>''}));
+
+/* Fig 10 · cultivated meat COGS by vessel */
+put('fig-tea', hbar([
+  {k:T('42,000 L stirred tank','42,000 L 攪拌槽'),   v:30.4, lab:'$30.4 / kg'},
+  {k:T('210,000 L stirred tank','210,000 L 攪拌槽'), v:20.8, lab:'$20.8 / kg'},
+  {k:T('260,000 L airlift','260,000 L 氣舉式'),      v:13.0, lab:'$13.0 / kg', c:C.accent, em:1},
+], {labW:220, valW:96, gridAt:[0,10,20,30], gridFmt:g=>'$'+g, axis:1, rowH:38, bh:18}));
+
+/* Fig 05 · Sartorius BPS, order intake vs sales, % cc */
+put('fig-cycle', lines(
+  ['2023','2024','2025','H1 2026'],
+  [{k:T('Order intake','訂單'), c:C.sky,  v:[-21.1,12.7,null,null], w:2.4},
+   {k:T('Sales','銷售'),        c:C.warn, v:[-17.6,0.9,9.5,8.3], w:2.4}],
+  {h:280,R:120,min:-26,max:20,base:0,ticks:4,yfmt:v=>(v>0?'+':'')+v.toFixed(0)+'%',
+   ylab:T('year on year, constant currency','年增率，固定匯率')}));
+
+/* Fig 06 · volumetric productivity */
+put('fig-prod', hbar([
+  {k:T('Fed-batch','饋料批次'),                        v:0.44, lab:'0.39 – 0.49', lo:0.39, hi:0.49, c:C.neutral},
+  {k:T('Rapid intensification, N-1 perfusion seed','快速強化，N-1 灌流種菌'), v:0.55, lab:'0.28 → 0.55', c:C.warn},
+  {k:T('High seeding density','高接種密度'),           v:2.04, lab:'2.04', c:C.sky},
+  {k:T('Perfusion','灌流'),                            v:2.29, lab:'2.29', c:C.accent, em:1},
+], {labW:280, valW:96, gridAt:[0,0.5,1,1.5,2,2.5], gridFmt:g=>g.toFixed(1), axis:1, rowH:36, bh:16, dp:2}));
+
+/* Fig 07 · three single-use shares */
+put('fig-su', hbar([
+  {k:T('Facilities using single-use somewhere','在某處使用拋棄式的廠房'), v:90, lab:'> 90 %', c:C.brandDeep},
+  {k:T('Installed bioreactor units','已裝機生物反應器台數'),             v:46, lab:'46 %', c:C.sky},
+  {k:T('Volumetric capacity','體積產能'),                                v:13, lab:'~13 %', c:C.warn, em:1},
+], {labW:280, valW:70, gridAt:[0,25,50,75,100], gridFmt:g=>g+'%', axis:1, rowH:38, bh:18}));
+
+/* Fig 08 · what the acquisition money bought */
+put('fig-ma', hbar([
+  {k:T('Filtration · Solventum P&F','過濾 · Solventum P&F'),        v:4100, lab:'$4,100 m', c:C.sky},
+  {k:T('Transfection reagents · Polyplus','轉染試劑 · Polyplus'),   v:2600, lab:'$2,600 m', c:C.sky},
+  {k:T('Biopreservation media · BioLife','生物保存介質 · BioLife'), v:1500, lab:'$1,500 m', c:C.sky},
+  {k:T('Single-use consumables · HPNE','拋棄式耗材 · HPNE'),        v:290,  lab:'$290 m',   c:C.brandDeep},
+  {k:T('Mixing · Metenova','混合 · Metenova'),                      v:173,  lab:'$173 m',   c:C.brandDeep},
+  {k:T('Bioreactors · Univercells Tech','生物反應器 · Univercells'), v:148, lab:'$148 m',   c:C.bad, em:1},
+  {k:T('Chromatography resins · Tantti','層析介質 · Tantti'),       v:75,   lab:'$75 m',    c:C.brandDeep},
+  {k:T('Process analytics · 908 Devices','製程分析 · 908 Devices'), v:70,   lab:'$70 m',    c:C.brandDeep},
+  {k:T('Bioreactors · Solaris Biotech','生物反應器 · Solaris'),      v:46,  lab:'$46 m',    c:C.bad, em:1},
+], {labW:300, valW:90, gridAt:[0,1000,2000,3000,4000], gridFmt:g=>'$'+(g/1000)+'bn', axis:1, rowH:30}));
+
+/* Fig 11 · policy timeline */
+put('fig-policy', timeline([
+  {lane:0, t:2022.72, k:T('EO 14081','14081 號行政命令'), k2:T('US biomanufacturing initiative','美國生物製造倡議'), dy:-18, anchor:'start', dx:-6, c:C.brand},
+  {lane:0, t:2025.20, k:T('EO 14081 rescinded','14081 遭撤銷'), k2:'14 Mar 2025', dy:-18, anchor:'end', dx:-4, c:C.bad},
+  {lane:0, t:2025.30, k:T('NSCEB report','NSCEB 報告'), k2:T('49 recommendations, $15 bn ask','49 項建議，要求 150 億美元'), dy:26, anchor:'start', dx:4, c:C.brand},
+  {lane:0, t:2025.96, k:T('BIOSECURE signed','BIOSECURE 簽署'), k2:'18 Dec 2025', dy:-44, anchor:'end', dx:-4, c:C.warn},
+  {lane:0, t:2026.44, k:T('WuXi AppTec listed 1260H','WuXi AppTec 列入 1260H'), k2:'8 Jun 2026', dy:-18, anchor:'end', dx:10, c:C.warn},
+  {lane:1, t:2025.96, k:T('EU Biotech Act proposal','歐盟生技法案提案'), k2:T('10-month permitting for strategic sites','策略性廠址十個月許可'), dy:-18, anchor:'end', dx:-6, c:C.sky},
+  {lane:2, t:2024.65, k:T('India BioE3','印度 BioE3'), k2:T('Rs 9,197 crore','919.7 億盧比'), dy:-18, anchor:'middle', c:C.plum},
+  {lane:2, t:2026.20, k:T('China 15th Five-Year Plan','中國十五五規劃'), k2:T('bioreactors named a focus','生物反應器列為重點'), dy:26, anchor:'end', dx:12, c:C.plum},
+], {y0:2022.4, y1:2026.9, laneH:92,
+    lanes:[{k:T('United States','美國')},{k:T('European Union','歐盟')},{k:T('Asia','亞洲')}]}));
+
+/* Fig 12 · open hardware costs */
+put('fig-open', hbar([
+  {k:T('DIY bubble column, 1 to 5 L','自製氣泡塔，1 至 5 L'),        v:440,  lab:'~$440',   c:C.brandDeep},
+  {k:'Chi.Bio ' + T('as published, 2020','論文公布值，2020'),         v:300,  lab:'~$300',   c:C.brandDeep},
+  {k:'Pioreactor 20 mL',                                              v:329,  lab:'$329',    c:C.brandDeep},
+  {k:'BioSamplr',                                                     v:700,  lab:'~$700',   c:C.accent},
+  {k:T('Open Bioeconomy Lab reactor','Open Bioeconomy Lab 反應器'),   v:650,  lab:'< £500',  c:C.accent},
+  {k:'Chi.Bio ' + T('as sold today','今日售價'),                      v:990,  lab:'$990',    c:C.warn, em:1},
+  {k:'Alg-Flex ' + T('photobioreactor','光生物反應器'),               v:1834, lab:'< $1,834',c:C.warn},
+  {k:'eVOLVER, 16 ' + T('chambers','個腔室'),                         v:2000, lab:'< $2,000',c:C.sky},
+  {k:'BIO-SPEC, 6 ' + T('parallel reactors','個平行反應器'),          v:2950, lab:'~$2,950', c:C.sky},
+], {labW:280, valW:86, gridAt:[0,1000,2000,3000], gridFmt:g=>'$'+g.toLocaleString(), axis:1, rowH:29}));
+
+/* Fig 13 · viability lost on drying */
+put('fig-dry', hbar([
+  {k:T('Freeze-drying, Pseudomonas','冷凍乾燥，Pseudomonas'),        v:1.5, lo:1, hi:2, lab:'1 – 2 log', c:C.sand},
+  {k:T('Spray-drying at 90 °C, Pantoea','90 °C 噴霧乾燥，Pantoea'),  v:3.5, lo:2, hi:5, lab:'2 – 5 log', c:C.warn},
+  {k:T('Fast fluidised bed','快速流化床'),                            v:4,   lab:'10⁹ → 10⁵', c:C.warn},
+  {k:T('Air-drying, endophytic Paraburkholderia','空氣乾燥，內生 Paraburkholderia'), v:6, lab:'6 log', c:C.bad, em:1},
+], {labW:300, valW:90, gridAt:[0,2,4,6], gridFmt:g=>g+' log', axis:1, rowH:36, bh:16}));
+
+/* Fig 14 · positioning matrix */
+put('fig-matrix', matrix([
+  {x:4,  y:8,  k:'WuXi Biologics', k2:T('contract capacity','委託產能'), c:C.sky, ly:24, anchor:'start', lx:-12},
+  {x:11, y:22, k:T('Liberation Bioindustries','Liberation Bioindustries'), c:C.sky, ly:-13, anchor:'start', lx:-16},
+  {x:24, y:9,  k:'Cellares', k2:T('closed automation','封閉自動化'), c:C.bad, ly:24},
+  {x:15, y:35, k:T('Sartorius · Cytiva · Thermo','Sartorius・Cytiva・Thermo'), k2:T('production single-use','量產拋棄式'), c:C.sky, ly:-24, anchor:'start', lx:-18},
+  {x:29, y:24, k:'Cauldron Ferm', c:C.sky, ly:5, anchor:'start', lx:11},
+  {x:31, y:45, k:'Pow.bio', c:C.sky, ly:-13, lx:-4},
+  {x:44, y:57, k:'Capra Biosciences', c:C.sky, ly:5, anchor:'start', lx:12},
+  {x:29, y:77, k:T('Eppendorf · benchtop lab','Eppendorf・實驗室桌上型'), c:C.plum, ly:-13},
+  {x:43, y:67, k:'Culture Biosciences', k2:'Stratyx 250', c:C.plum, ly:26},
+  {x:58, y:92, k:T('Open hardware','開源硬體'), k2:'Pioreactor · Chi.Bio · eVOLVER', c:C.warn, ly:26},
+  {x:65, y:19, k:'SoluBio', k2:T('on-farm, wild type','農場端，野生型'), c:C.sand, ly:24},
+  {x:91, y:86, k:'ReLeaf BR-01', c:C.brandDeep, r:9, em:1, halo:1, ly:-20, anchor:'end', lx:8},
+], {h:530,
+    xlab:T('Distance from the place the product is used','離產物使用地點的距離'),
+    ylab:T('Who must agree before it makes something different','要改做別的東西，必須誰點頭'),
+    xlo:T('central plant','集中式廠房'), xhi:T('beside the crop','作物旁邊'),
+    quad:[{x0:50,x1:100,y0:50,y1:100,c:'#eef8dd',op:.85,at:'br',k:T('NEAR THE CROP, AND OPERATOR-DECIDED','靠近作物，且由操作者決定')},
+          {x0:0,x1:50,y0:0,y1:50,c:'#eceee7',op:.7,k:T('CENTRAL AND GATED','集中，且受管制')}]}));
+}
+if(_boot==='zh'||_boot==='en') setLang(_boot); else draw();
+</script>
